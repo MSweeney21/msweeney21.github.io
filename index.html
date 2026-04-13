@@ -1,0 +1,953 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Molokai Investments | Wealth Strategist | Christian Value Investing</title>
+  <meta name="description" content="Holistic business and personal financial integration for family business owners and individuals. Christian value investing. Wake Forest, NC." />
+  <link rel="icon" type="image/png" href="/favicon.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --blue: #1a3a6e;
+      --blue-deep: #0f2347;
+      --blue-mid: #2a4f8f;
+      --silver: #8a9ab5;
+      --silver-light: #c8d0dd;
+      --gray-bg: #f2f3f5;
+      --gray-mid: #e4e7ec;
+      --white: #ffffff;
+      --text: #1a1a2e;
+      --text-muted: #5a6478;
+      --border: rgba(26,58,110,0.1);
+    }
+
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Jost', sans-serif;
+      font-weight: 300;
+      color: var(--text);
+      background: var(--white);
+      overflow-x: hidden;
+    }
+
+    /* NAV */
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      padding: 1.2rem 5vw;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: rgba(255,255,255,0.97);
+      backdrop-filter: blur(8px);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .nav-brand {
+      display: flex;
+      align-items: center;
+      gap: 0.9rem;
+      text-decoration: none;
+    }
+
+    .nav-mi {
+      display: flex;
+      align-items: center;
+      gap: 0;
+    }
+
+    .nav-mi-text {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.6rem;
+      font-weight: 500;
+      color: var(--blue);
+      letter-spacing: 0.05em;
+      line-height: 1;
+    }
+
+    .nav-mi-divider {
+      width: 1px;
+      height: 1.4rem;
+      background: var(--blue);
+      margin: 0 0.18rem;
+      opacity: 0.7;
+    }
+
+    .nav-wordmark {
+      display: flex;
+      flex-direction: column;
+      border-left: 1px solid var(--silver-light);
+      padding-left: 0.9rem;
+    }
+
+    .nav-name {
+      font-family: 'Jost', sans-serif;
+      font-size: 0.7rem;
+      font-weight: 500;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: var(--blue);
+    }
+
+    .nav-registered {
+      font-size: 0.58rem;
+      letter-spacing: 0.12em;
+      color: var(--silver);
+      text-transform: uppercase;
+      margin-top: 0.1rem;
+    }
+
+    .nav-cta {
+      font-size: 0.7rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      font-weight: 500;
+      color: var(--white);
+      background: var(--blue);
+      text-decoration: none;
+      padding: 0.65rem 1.6rem;
+      transition: background 0.2s;
+    }
+    .nav-cta:hover { background: var(--blue-deep); }
+
+    /* HERO */
+    .hero {
+      min-height: 100vh;
+      display: grid;
+      grid-template-columns: 55% 45%;
+      padding-top: 68px;
+    }
+
+    .hero-left {
+      background: var(--blue);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 6rem 5rem 6rem 6vw;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-left::before {
+      content: '';
+      position: absolute;
+      top: -120px; right: -80px;
+      width: 380px; height: 380px;
+      border-radius: 50%;
+      background: rgba(200,208,221,0.06);
+      pointer-events: none;
+    }
+
+    .hero-left::after {
+      content: '';
+      position: absolute;
+      bottom: -100px; left: 40px;
+      width: 260px; height: 260px;
+      border-radius: 50%;
+      background: rgba(200,208,221,0.04);
+      pointer-events: none;
+    }
+
+    .hero-eyebrow {
+      font-size: 0.65rem;
+      letter-spacing: 0.35em;
+      text-transform: uppercase;
+      color: var(--silver-light);
+      margin-bottom: 1.6rem;
+      opacity: 0;
+      animation: fadeUp 0.8s 0.2s forwards;
+    }
+
+    .hero-headline {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(2.6rem, 3.5vw, 4rem);
+      font-weight: 300;
+      line-height: 1.18;
+      color: var(--white);
+      margin-bottom: 2rem;
+      opacity: 0;
+      animation: fadeUp 0.8s 0.4s forwards;
+    }
+
+    .hero-headline em {
+      font-style: italic;
+      color: var(--silver-light);
+    }
+
+    .hero-divider {
+      width: 48px;
+      height: 1px;
+      background: var(--silver);
+      margin-bottom: 1.8rem;
+      opacity: 0;
+      animation: fadeUp 0.8s 0.55s forwards;
+    }
+
+    .hero-sub {
+      font-size: 0.88rem;
+      line-height: 1.85;
+      color: rgba(255,255,255,0.68);
+      max-width: 440px;
+      margin-bottom: 3rem;
+      opacity: 0;
+      animation: fadeUp 0.8s 0.6s forwards;
+    }
+
+    .hero-cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.8rem;
+      background: var(--white);
+      color: var(--blue);
+      text-decoration: none;
+      padding: 1rem 2.2rem;
+      font-size: 0.72rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      font-weight: 500;
+      transition: gap 0.2s, background 0.2s;
+      align-self: flex-start;
+      opacity: 0;
+      animation: fadeUp 0.8s 0.8s forwards;
+    }
+    .hero-cta:hover { gap: 1.2rem; background: var(--gray-bg); }
+
+    .hero-right {
+      background: var(--gray-bg);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding: 4rem 3rem;
+      position: relative;
+    }
+
+    .hero-photo-wrap {
+      width: min(320px, 80%);
+      aspect-ratio: 1;
+      border-radius: 50%;
+      overflow: hidden;
+      border: 4px solid var(--white);
+      box-shadow: 0 20px 60px rgba(26,58,110,0.18);
+      margin-bottom: 2.5rem;
+      opacity: 0;
+      animation: fadeIn 1s 0.6s forwards;
+    }
+
+    .hero-photo-wrap img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center top;
+    }
+
+    .hero-bio {
+      text-align: center;
+      opacity: 0;
+      animation: fadeUp 0.8s 0.9s forwards;
+    }
+
+    .hero-name {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.5rem;
+      font-weight: 500;
+      color: var(--blue);
+      margin-bottom: 0.3rem;
+    }
+
+    .hero-title {
+      font-size: 0.7rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--silver);
+      margin-bottom: 1rem;
+    }
+
+    .hero-credential {
+      display: inline-block;
+      background: var(--blue);
+      color: var(--white);
+      font-size: 0.65rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      padding: 0.35rem 0.9rem;
+      margin-bottom: 1.2rem;
+    }
+
+    .hero-location {
+      font-size: 0.75rem;
+      color: var(--text-muted);
+      letter-spacing: 0.05em;
+    }
+
+    /* WHAT I DO */
+    .what {
+      padding: 7rem 5vw;
+      background: var(--white);
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 6rem;
+      align-items: center;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .what-label {
+      font-size: 0.65rem;
+      letter-spacing: 0.35em;
+      text-transform: uppercase;
+      color: var(--silver);
+      margin-bottom: 1.2rem;
+    }
+
+    .what-heading {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(2rem, 2.8vw, 3rem);
+      font-weight: 400;
+      line-height: 1.25;
+      color: var(--blue);
+      margin-bottom: 1.8rem;
+    }
+
+    .what-body {
+      font-size: 0.9rem;
+      line-height: 1.85;
+      color: var(--text-muted);
+      margin-bottom: 1.4rem;
+    }
+
+    .what-right {
+      display: flex;
+      flex-direction: column;
+      gap: 1.2rem;
+    }
+
+    .what-card {
+      background: var(--gray-bg);
+      padding: 1.8rem 2rem;
+      border-left: 3px solid var(--blue);
+      transition: border-color 0.2s, transform 0.2s;
+    }
+
+    .what-card:hover {
+      border-color: var(--silver);
+      transform: translateX(4px);
+    }
+
+    .what-card-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.15rem;
+      font-weight: 500;
+      color: var(--blue);
+      margin-bottom: 0.5rem;
+    }
+
+    .what-card-body {
+      font-size: 0.82rem;
+      line-height: 1.7;
+      color: var(--text-muted);
+    }
+
+    /* WHO */
+    .who {
+      background: var(--gray-bg);
+      padding: 7rem 5vw;
+    }
+
+    .who-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .section-label {
+      font-size: 0.65rem;
+      letter-spacing: 0.35em;
+      text-transform: uppercase;
+      color: var(--silver);
+      margin-bottom: 1.2rem;
+      text-align: center;
+    }
+
+    .section-heading {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(2rem, 2.8vw, 2.8rem);
+      font-weight: 400;
+      line-height: 1.25;
+      color: var(--blue);
+      margin-bottom: 1rem;
+      text-align: center;
+    }
+
+    .section-sub {
+      font-size: 0.88rem;
+      line-height: 1.8;
+      color: var(--text-muted);
+      text-align: center;
+      max-width: 600px;
+      margin: 0 auto 4rem;
+    }
+
+    .who-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem;
+    }
+
+    .who-card {
+      background: var(--white);
+      padding: 2.5rem;
+      position: relative;
+      transition: box-shadow 0.2s;
+    }
+
+    .who-card:hover {
+      box-shadow: 0 8px 32px rgba(26,58,110,0.1);
+    }
+
+    .who-num {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 3.5rem;
+      font-weight: 300;
+      color: var(--gray-mid);
+      position: absolute;
+      top: 1.5rem; right: 2rem;
+      line-height: 1;
+    }
+
+    .who-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.3rem;
+      font-weight: 500;
+      color: var(--blue);
+      margin-bottom: 1rem;
+    }
+
+    .who-body {
+      font-size: 0.83rem;
+      line-height: 1.8;
+      color: var(--text-muted);
+    }
+
+    /* HOW */
+    .how {
+      padding: 7rem 5vw;
+      background: var(--white);
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .how-steps {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 0;
+      margin-top: 4rem;
+      position: relative;
+    }
+
+    .how-steps::before {
+      content: '';
+      position: absolute;
+      top: 2.5rem;
+      left: calc(100% / 6);
+      right: calc(100% / 6);
+      height: 1px;
+      background: var(--silver-light);
+    }
+
+    .how-step {
+      padding: 0 2rem;
+      text-align: center;
+    }
+
+    .how-step-num {
+      width: 5rem;
+      height: 5rem;
+      border-radius: 50%;
+      background: var(--blue);
+      color: var(--white);
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.6rem;
+      font-weight: 400;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 1.8rem;
+      position: relative;
+      z-index: 1;
+    }
+
+    .how-step-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.15rem;
+      font-weight: 500;
+      color: var(--blue);
+      margin-bottom: 0.7rem;
+    }
+
+    .how-step-body {
+      font-size: 0.8rem;
+      line-height: 1.75;
+      color: var(--text-muted);
+    }
+
+    /* FAITH */
+    .faith {
+      background: var(--blue);
+      padding: 6rem 5vw;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .faith::before {
+      content: '“';
+      position: absolute;
+      top: -2rem; left: 5vw;
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 20rem;
+      color: rgba(255,255,255,0.04);
+      line-height: 1;
+      pointer-events: none;
+    }
+
+    .faith-label {
+      font-size: 0.65rem;
+      letter-spacing: 0.35em;
+      text-transform: uppercase;
+      color: var(--silver-light);
+      margin-bottom: 1.5rem;
+    }
+
+    .faith-quote {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(1.6rem, 2.5vw, 2.4rem);
+      font-weight: 300;
+      font-style: italic;
+      color: var(--white);
+      max-width: 800px;
+      margin: 0 auto 1.5rem;
+      line-height: 1.5;
+    }
+
+    .faith-body {
+      font-size: 0.88rem;
+      line-height: 1.85;
+      color: rgba(255,255,255,0.65);
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    /* CONTACT */
+    .contact {
+      padding: 7rem 5vw;
+      background: var(--gray-bg);
+    }
+
+    .contact-inner {
+      max-width: 680px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    .contact-heading {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(2rem, 3vw, 3rem);
+      font-weight: 400;
+      color: var(--blue);
+      margin-bottom: 1rem;
+    }
+
+    .contact-sub {
+      font-size: 0.88rem;
+      line-height: 1.8;
+      color: var(--text-muted);
+      margin-bottom: 3rem;
+    }
+
+    .contact-form {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      text-align: left;
+    }
+
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+    }
+
+    .form-group {
+      display: flex;
+      flex-direction: column;
+      gap: 0.4rem;
+    }
+
+    .form-group label {
+      font-size: 0.68rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+    }
+
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+      padding: 0.85rem 1rem;
+      border: 1px solid var(--gray-mid);
+      background: var(--white);
+      font-family: 'Jost', sans-serif;
+      font-size: 0.85rem;
+      font-weight: 300;
+      color: var(--text);
+      outline: none;
+      transition: border-color 0.2s;
+      -webkit-appearance: none;
+    }
+
+    .form-group select {
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%231a3a6e' stroke-width='1.5' fill='none' stroke-linecap='square'/%3E%3C/svg%3E");
+      background-repeat: no-repeat;
+      background-position: right 1rem center;
+      padding-right: 2.5rem;
+      cursor: pointer;
+    }
+
+    .form-group input:focus,
+    .form-group select:focus,
+    .form-group textarea:focus {
+      border-color: var(--blue);
+    }
+
+    .form-group textarea { resize: vertical; min-height: 110px; }
+
+    .form-submit {
+      background: var(--blue);
+      color: var(--white);
+      border: none;
+      padding: 1.1rem 2.5rem;
+      font-family: 'Jost', sans-serif;
+      font-size: 0.72rem;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      font-weight: 500;
+      cursor: pointer;
+      transition: background 0.2s;
+      align-self: center;
+      min-width: 220px;
+    }
+
+    .form-submit:hover { background: var(--blue-deep); }
+
+    .contact-alt {
+      margin-top: 2.5rem;
+      font-size: 0.78rem;
+      color: var(--text-muted);
+    }
+
+    .contact-alt a {
+      color: var(--blue);
+      text-decoration: none;
+      font-weight: 400;
+    }
+
+    .contact-alt a:hover { text-decoration: underline; }
+
+    /* FOOTER */
+    footer {
+      background: var(--blue-deep);
+      padding: 3rem 5vw;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 1.5rem;
+    }
+
+    .footer-brand {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 0.9rem;
+      font-weight: 500;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--white);
+    }
+
+    .footer-legal {
+      font-size: 0.7rem;
+      color: rgba(255,255,255,0.45);
+      line-height: 1.7;
+      max-width: 500px;
+      text-align: right;
+    }
+
+    /* ANIMATIONS */
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(24px);
+      transition: opacity 0.7s, transform 0.7s;
+    }
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* RESPONSIVE */
+    @media (max-width: 768px) {
+      nav { padding: 1rem 5vw; }
+      .nav-wordmark { display: none; }
+      .hero { grid-template-columns: 1fr; }
+      .hero-left { padding: 4rem 5vw 3rem; min-height: 60vh; }
+      .hero-right { padding: 3rem 5vw 4rem; }
+      .what { grid-template-columns: 1fr; gap: 3rem; padding: 4rem 5vw; }
+      .who-grid { grid-template-columns: 1fr; }
+      .how-steps { grid-template-columns: 1fr; gap: 3rem; }
+      .how-steps::before { display: none; }
+      .form-row { grid-template-columns: 1fr; }
+      footer { flex-direction: column; text-align: center; }
+      .footer-legal { text-align: center; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav>
+    <a href="#" style="text-decoration:none; display:flex; flex-direction:column; align-items:center; gap:0.3rem;">
+      <img src="/logo.png" alt="Molokai Investments" style="height:64px; width:auto;"/>
+      <span style="font-family:'Jost',sans-serif; font-size:0.62rem; font-weight:500; letter-spacing:0.28em; text-transform:uppercase; color:#1a3a6e; white-space:nowrap;">Molokai Investments</span>
+    </a>
+    <a href="#contact" class="nav-cta">Start a Conversation</a>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-left">
+      <p class="hero-eyebrow">Family Wealth Strategist &middot; Wake Forest, NC</p>
+      <h1 class="hero-headline">
+        Your financial life &mdash;<br>
+        <em>finally unified.</em>
+      </h1>
+      <div class="hero-divider"></div>
+      <p class="hero-sub">
+        Business finances, personal wealth, and investments coordinated under one integrated strategy &mdash; guided by a CFA charterholder and grounded in Christian values.
+      </p>
+      <a href="#contact" class="hero-cta">
+        Book a Discovery Call
+        <span class="hero-cta-arrow">&rarr;</span>
+      </a>
+    </div>
+    <div class="hero-right">
+      <div class="hero-photo-wrap">
+        <img src="/headshot.jpg" alt="Matthew Sweeney, CFA" />
+      </div>
+      <div class="hero-bio">
+        <p class="hero-name">Matthew Sweeney</p>
+        <p class="hero-title">Family Wealth Strategist &middot; Molokai Investments</p>
+        <span class="hero-credential">CFA Charterholder</span>
+        <p class="hero-location">&#x1F4CD; Wake Forest, North Carolina</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHAT I DO -->
+  <section class="what">
+    <div class="what-left reveal">
+      <p class="what-label">What I Do</p>
+      <h2 class="what-heading">One strategy.<br>Every dimension.</h2>
+      <p class="what-body">
+        It is common for our financial lives to feel fragmented &mdash; siloed accounts and advisors that you&rsquo;re left coordinating yourself. My role is to bring that picture into focus. I connect the dimensions of your financial life &mdash; integrating business strategy and cash flow with personal long-term wealth.
+      </p>
+      <p class="what-body">
+        I make sure every asset is working toward a unified objective, ensuring your entire team of professionals is aligned with your family&rsquo;s actual goals.
+      </p>
+    </div>
+    <div class="what-right reveal">
+      <div class="what-card">
+        <p class="what-card-title">Business Financial Management</p>
+        <p class="what-card-body">Monthly reporting, cash flow oversight, bookkeeper coordination, business valuation estimates, and transition readiness &mdash; delivered monthly, before decisions get made without the right information.</p>
+      </div>
+      <div class="what-card">
+        <p class="what-card-title">Personal Wealth Integration</p>
+        <p class="what-card-body">Investment management, tax planning coordination, estate gap identification, and a complete Family Financial Blueprint &mdash; everything organized in one place.</p>
+      </div>
+      <div class="what-card">
+        <p class="what-card-title">Total Advisor Coordination</p>
+        <p class="what-card-body">I work alongside your existing CPA, attorney, and financial advisor &mdash; filling gaps, coordinating communication, and ensuring your entire team is aligned.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHO I SERVE -->
+  <section class="who">
+    <div class="who-inner">
+      <p class="section-label reveal">Who I Serve</p>
+      <h2 class="section-heading reveal">Built for two kinds of partners.</h2>
+      <p class="section-sub reveal">Whether you own a business or simply want your personal finances managed with purpose, Molokai Investments was built for partners like you &mdash; and every situation is treated as unique.</p>
+      <div class="who-grid">
+        <div class="who-card reveal">
+          <span class="who-num">01</span>
+          <p class="who-title">Family Business Owners</p>
+          <p class="who-body">
+            Families and individuals who own privately-held businesses generating $1&ndash;15M in annual revenue. You&rsquo;ve built something valuable, but your financial life is managed in fragments with no one coordinating the full picture. I bring it all together &mdash; business and personal &mdash; under one integrated strategy, treating you as a true partner in that process.
+          </p>
+        </div>
+        <div class="who-card reveal">
+          <span class="who-num">02</span>
+          <p class="who-title">Individual Investors</p>
+          <p class="who-body">
+            Individuals and families who want their complete financial picture &mdash; all assets, whether I manage them or not &mdash; factored into a holistic investment strategy grounded in Christian values. You receive the same integrated approach: a coordinated picture of everything you own, working toward a unified objective.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- HOW IT WORKS -->
+  <section style="padding: 7rem 5vw; background: var(--white);">
+    <div style="max-width: 1200px; margin: 0 auto;">
+      <p class="section-label reveal">How It Works</p>
+      <h2 class="section-heading reveal">Three steps to a fully integrated financial life.</h2>
+      <p class="section-sub reveal">Every engagement begins the same way &mdash; with a genuine conversation.</p>
+      <div class="how-steps">
+        <div class="how-step reveal">
+          <div class="how-step-num">1</div>
+          <p class="how-step-title">Discovery Call</p>
+          <p class="how-step-body">A free, conversational call to understand your situation and determine whether we&rsquo;re the right fit for each other.</p>
+        </div>
+        <div class="how-step reveal">
+          <div class="how-step-num">2</div>
+          <p class="how-step-title">Assessment</p>
+          <p class="how-step-body">A 30-day deep dive into your complete financial picture &mdash; business and personal. You receive a written report, a Family Financial Blueprint, and a prioritized action plan.</p>
+        </div>
+        <div class="how-step reveal">
+          <div class="how-step-num">3</div>
+          <p class="how-step-title">Ongoing Partnership</p>
+          <p class="how-step-body">Monthly reporting, advisor coordination, portfolio management, and a quarterly updated picture of where everything stands &mdash; delivered consistently and in time for the decisions that matter.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAITH SECTION -->
+  <section class="faith">
+    <p class="faith-label reveal">Christian Value Investing</p>
+    <p class="faith-quote reveal">&ldquo;Even the decision to invest in one place rather than another, in one productive sector rather than another, is always a moral and cultural choice.&rdquo;</p>
+        <p style="font-size:0.72rem; letter-spacing:0.1em; color:rgba(255,255,255,0.5); max-width:600px; margin:0 auto 1.8rem; font-style:italic; text-align:center;">&mdash; Pope St. John Paul II, Centesimus Annus (1991)</p>
+        <p class="faith-body reveal">
+      All portfolio management at Molokai Investments is guided by Christian values and stewardship principles &mdash; a foundational conviction, not a niche offering. This means investing with a long-term, fundamentals-driven philosophy that aligns financial growth with what you truly believe.
+    </p>
+  </section>
+
+  <!-- BOOKING -->
+  <section style="padding: 5rem 5vw; background: var(--white);">
+    <div style="max-width: 860px; margin: 0 auto;">
+      <p class="section-label reveal" style="text-align:center;">Schedule a Call</p>
+      <h2 class="section-heading reveal" style="text-align:center;">Book a discovery call.</h2>
+      <p class="section-sub reveal" style="text-align:center; max-width:520px; margin: 0 auto 2.5rem;">
+        Choose a time that works for you. The first conversation is free, conversational, and has no agenda beyond determining whether we are the right fit for each other.
+      </p>
+      <div class="reveal" style="text-align: center;">
+        <a href="https://outlook.office.com/book/MolokaiInvestments@molokaiinvestments.com/?ismsaljsauthenabled"
+           target="_blank" rel="noopener noreferrer"
+           style="display: inline-flex; align-items: center; gap: 0.8rem; background: var(--blue); color: var(--white); text-decoration: none; padding: 1.1rem 2.8rem; font-family: 'Jost', sans-serif; font-size: 0.8rem; letter-spacing: 0.2em; text-transform: uppercase; font-weight: 500; transition: background 0.2s;">
+          Schedule a Discovery Call &rarr;
+        </a>
+        <p style="margin-top: 1.2rem; font-size: 0.78rem; color: var(--text-muted);">Opens in a new tab &mdash; no account required.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section class="contact" id="contact">
+    <div class="contact-inner">
+      <p class="section-label reveal">Get in Touch</p>
+      <h2 class="contact-heading reveal">Let&rsquo;s talk.</h2>
+      <p class="contact-sub reveal">
+        Prefer to reach out directly? Send a message below and I will be in touch within one business day.
+      </p>
+      <form class="contact-form reveal" name="contact" method="POST" action="https://api.web3forms.com/submit">
+        <input type="hidden" name="access_key" value="YOUR_WEB3FORMS_KEY" />
+        <input type="hidden" name="subject" value="New Inquiry - Molokai Investments Website" />
+        <input type="hidden" name="redirect" value="https://molokaiinvestments.com/thanks.html" />
+        <input type="checkbox" name="botcheck" style="display:none;" />
+        <div class="form-row">
+          <div class="form-group">
+            <label for="name">Full Name</label>
+            <input type="text" id="name" name="name" placeholder="Your Name" required />
+          </div>
+          <div class="form-group">
+            <label for="email">Email Address</label>
+            <input type="email" id="email" name="email" placeholder="your@email.com" required />
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label for="phone">Phone (optional)</label>
+            <input type="tel" id="phone" name="phone" placeholder="Your phone number" />
+          </div>
+          <div class="form-group">
+            <label for="type">I am a&hellip;</label>
+            <select id="type" name="type">
+              <option value="">Select one</option>
+              <option value="business-owner">Family Business Owner</option>
+              <option value="individual">Individual Investor</option>
+              <option value="other">Other</option>
+            </select>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="message">What brings you here?</label>
+          <textarea id="message" name="message" placeholder="Tell me a little about your situation and what you&rsquo;re looking for&hellip;"></textarea>
+        </div>
+        <button type="submit" class="form-submit">Send Message &rarr;</button>
+      </form>
+
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <span class="footer-brand">Molokai Investments</span>
+    <p class="footer-legal">
+      Molokai Investments LLC is a registered investment adviser in the State of North Carolina. Registration does not imply a certain level of skill or training. This website is for informational purposes only and does not constitute investment advice. &copy; 2026 Molokai Investments LLC. All rights reserved.
+    </p>
+  </footer>
+
+  <script>
+    // Scroll reveal
+    const reveals = document.querySelectorAll('.reveal');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry, i) => {
+        if (entry.isIntersecting) {
+          setTimeout(() => entry.target.classList.add('visible'), i * 80);
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.1 });
+    reveals.forEach(el => observer.observe(el));
+
+    // Form handler
+    // Once you add your Formspree ID above, remove the e.preventDefault() line
+    // so the form submits normally to Formspree
+    // Form handled natively by Netlify
+  </script>
+
+</body>
+</html>
