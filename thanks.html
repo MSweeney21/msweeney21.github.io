@@ -2,32 +2,41 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Thank You | Molokai Investments</title>
-  <meta http-equiv="refresh" content="4;url=/" />
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500&family=Jost:wght@300;400;500&display=swap" rel="stylesheet" />
-  <style>
-    * { box-sizing: border-box; margin: 0; padding: 0; }
-    body { font-family: 'Jost', sans-serif; font-weight: 300; background: #f2f3f5; min-height: 100vh; display: flex; align-items: center; justify-content: center; padding: 2rem; }
-    .card { background: #ffffff; padding: 4rem 3rem; max-width: 520px; width: 100%; text-align: center; border-top: 4px solid #1a3a6e; }
-    .check { width: 56px; height: 56px; border-radius: 50%; background: #1a3a6e; display: flex; align-items: center; justify-content: center; margin: 0 auto 1.8rem; }
-    h1 { font-family: 'Cormorant Garamond', serif; font-size: 2rem; font-weight: 400; color: #1a3a6e; margin-bottom: 1rem; }
-    p { font-size: 0.9rem; line-height: 1.8; color: #5a6478; margin-bottom: 0.5rem; }
-    .redirect { font-size: 0.75rem; color: #8a9ab5; margin-top: 1.5rem; }
-    a { color: #1a3a6e; text-decoration: none; }
-  </style>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Thank you | Molokai Investments</title>
+  <meta name="description" content="Thanks for your note. I reply within one business day." />
+  <link rel="icon" type="image/png" href="logo.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Jost:wght@300;400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css?v=202611062201" />
 </head>
 <body>
-  <div class="card">
-    <div class="check">
-      <svg viewBox="0 0 24 24" width="24" height="24" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path d="M5 12l5 5L19 7" stroke="white" stroke-width="2.5" stroke-linecap="square"/>
-      </svg>
-    </div>
-    <h1>Message received.</h1>
-    <p>Thank you for reaching out to Molokai Investments.</p>
-    <p>Matthew will review your message and be in touch shortly.</p>
-    <p class="redirect">Redirecting you back to the site &mdash; or <a href="/">click here</a>.</p>
+<header class="nav">
+  <div class="container">
+    <a class="brand" href="index.html"><img src="logo.png" alt="Molokai Investments" /><span>Family business,<br />in that order.</span></a>
+    <button class="menu-toggle" aria-expanded="false" aria-controls="menu">Menu</button>
+    <nav class="menu" id="menu" aria-label="Main"><a href="family-cfo.html">Family CFO</a><a href="strategy.html">Family Value Portfolio</a><a href="report.html">Free report</a><a href="about.html">About</a><a href="contact.html" class="btn btn--primary">Book a call</a></nav>
   </div>
+</header>
+<script>document.querySelector('.menu-toggle').addEventListener('click',function(){var m=document.getElementById('menu');var o=m.classList.toggle('open');this.setAttribute('aria-expanded',o)});</script>
+<section class="section section--ground">
+  <div class="container" style="max-width:40rem">
+    <div class="card" style="text-align:center;padding:var(--s6) var(--s5)">
+      <span class="icon" style="margin:0 auto var(--s3)"><svg viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span>
+      <p class="kicker">Thank you</p>
+      <h2>Your note is on its way.</h2>
+      <p class="lead" style="margin:var(--s2) auto 0;max-width:30rem">I read every message myself and will reply within one business day. If you&rsquo;d rather not wait, pick a time now and we&rsquo;ll talk it through.</p>
+      <div class="actions" style="justify-content:center;margin-top:var(--s4)"><a class="btn btn--primary" href="https://outlook.office.com/book/MolokaiInvestments@molokaiinvestments.com/?ismsaljsauthenabled" target="_blank" rel="noopener">Pick a time</a><a class="btn btn--secondary" href="index.html">Back to the home page</a></div>
+    </div>
+  </div>
+</section>
+<footer class="footer">
+  <div class="container">
+    <div><img src="logo.png" alt="Molokai Investments" /><p>1009 New Creek Way<br />Wake Forest, NC 27587<br /><a href="tel:+19194954027">(919) 495-4027</a><br /><a href="mailto:matthew@molokaiinvestments.com">matthew@molokaiinvestments.com</a></p></div>
+    <div><h4>Explore</h4><ul><li><a href="family-cfo.html">Family CFO</a></li><li><a href="strategy.html">The Family Value Portfolio</a></li><li><a href="report.html">Your free readiness report</a></li><li><a href="contact.html">Contact</a></li></ul></div>
+    <p class="legal">Molokai Investments LLC is a registered investment adviser in the State of North Carolina. Registration does not imply a certain level of skill or training. Molokai Family &amp; Business Integration is a trade name of Molokai Investments LLC. This website is for informational purposes only and does not constitute investment, legal, or tax advice; your attorney and CPA provide legal and tax advice, and I coordinate with them. The planning-level value estimate is for planning purposes only and is not an appraisal. Investing involves risk, including the possible loss of principal. Complete fee information is in Form ADV Part 2A, provided before any agreement is signed. Prices shown as of November 2026. &copy; 2026 Molokai Investments LLC.</p>
+  </div>
+</footer>
 </body>
 </html>

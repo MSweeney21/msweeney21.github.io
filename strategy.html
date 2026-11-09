@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>The Family Value Portfolio | Molokai Investments</title>
+  <meta name="description" content="Family values first, value investing second. A Christian values-based, concentrated portfolio held in your own name at Interactive Brokers." />
+  <link rel="icon" type="image/png" href="logo.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Jost:wght@300;400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css?v=202611091725" />
+</head>
+<body>
+<header class="nav">
+  <div class="container">
+    <a class="brand" href="index.html"><img src="logo.png" alt="Molokai Investments" /><span>Family business,<br />in that order.</span></a>
+    <button class="menu-toggle" aria-expanded="false" aria-controls="menu">Menu</button>
+    <nav class="menu" id="menu" aria-label="Main"><a href="family-cfo.html">Family CFO</a><a href="strategy.html" aria-current="page">Family Value Portfolio</a><a href="report.html">Free report</a><a href="about.html">About</a><a href="contact.html" class="btn btn--primary">Book a call</a></nav>
+  </div>
+</header>
+<script>document.querySelector('.menu-toggle').addEventListener('click',function(){var m=document.getElementById('menu');var o=m.classList.toggle('open');this.setAttribute('aria-expanded',o)});</script>
+<section class="hero">
+  <div class="container split">
+    <div>
+      <p class="kicker">The Family Value Portfolio</p>
+      <h1>Family values first. <em>Value investing second.</em></h1>
+      <p class="lead">A Christian values-based investment approach, built for value investors. The values you instill in your family decide what can be owned; value then decides what is.</p>
+      <div class="actions"><a class="btn btn--primary" href="contact.html">Ask about the portfolio</a><a class="btn btn--secondary" href="family-cfo.html">Start with the Family CFO</a></div>
+      <div class="trust"><span>CFA charterholder</span><span>NC-registered investment adviser</span><span>Wake Forest, North Carolina</span></div>
+    </div>
+    <div class="art"><div class="orbit orbit--penta" role="img" aria-label="Your family's values at the center, surrounded by Human life, Human dignity, Economic justice, The common good, Our home.">
+  <div class="center">Your family's values<small>decide what can be owned</small></div><span class="o c" style="left:50.0%;top:22.0%">Human life</span><span class="o r" style="left:76.6%;top:41.3%">Human dignity</span><span class="o r" style="left:66.5%;top:72.7%">Economic justice</span><span class="o l" style="left:33.5%;top:72.7%">The common good</span><span class="o l" style="left:23.4%;top:41.3%">Our home</span>
+</div></div><script>
+(function(){
+  var o=document.querySelector('.orbit--penta'); if(!o) return;
+  if(window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  var pills=[].slice.call(o.querySelectorAll('.o')), n=pills.length, W=0, size=[], t0=null, off=0, paused=false, pt=0, run=false;
+  var PERIOD=90000, R=.32;
+  function measure(){
+    W=o.clientWidth; R=.28;
+    pills.forEach(function(el){el.style.fontSize='';});
+    size=pills.map(function(el){return [el.offsetWidth, el.offsetHeight, parseFloat(getComputedStyle(el).paddingLeft)]});
+    var art=o.parentNode.getBoundingClientRect(), ob=o.getBoundingClientRect(), padR=Math.min(ob.left-art.left, art.right-ob.right);
+    /* shrink label text only as much as the widest label needs to stay inside the card */
+    var ratio=1;
+    size.forEach(function(sz){ var room=W*(.5-R)+padR-4+.6*sz[2]; if(sz[0]>room) ratio=Math.min(ratio, room/sz[0]); });
+    if(ratio<1){ var fs=parseFloat(getComputedStyle(pills[0]).fontSize)*ratio*.98; pills.forEach(function(el){el.style.fontSize=fs+'px';});
+      size=pills.map(function(el){return [el.offsetWidth, el.offsetHeight, parseFloat(getComputedStyle(el).paddingLeft)]}); }
+    /* keep labels clear of the center */
+    var cw=o.querySelector('.center').offsetWidth, Rc=cw/2+W*.024+3, cx=W/2, cy=W/2;
+    function clear(r){ for(var deg=0;deg<72;deg+=3) for(var i=0;i<n;i++){ var a=(deg-90+i*360/n)*Math.PI/180, c=Math.cos(a), sn=Math.sin(a), w=size[i][0], h=size[i][1], pad=size[i][2];
+      var l=W*(.5+r*c)-w*(.5-.5*c)-pad*.6*c, t=W*(.5+r*sn)-h/2, nx=Math.max(l,Math.min(cx,l+w)), ny=Math.max(t,Math.min(cy,t+h)); if(Math.hypot(nx-cx,ny-cy)<Rc) return false; } return true; }
+    while(!clear(R) && R<.36) R+=.01;
+    o.style.setProperty('--ring', (50-R*100)+'%');
+  }
+  function place(deg){
+    pills.forEach(function(el,i){
+      var a=(deg+i*360/n)*Math.PI/180, c=Math.cos(a), s=Math.sin(a), w=size[i][0], h=size[i][1], pad=size[i][2];
+      var x=W*(.5+R*c), y=W*(.5+R*s);
+      var left=x - w*(.5-.5*c) - pad*.6*c;      /* label grows outward from the ring */
+      el.style.transform='translate3d('+left.toFixed(2)+'px,'+(y-h/2).toFixed(2)+'px,0)';
+    });
+  }
+  function step(ts){ if(!run) return; if(t0===null){t0=ts;pt=ts;} if(paused){off+=ts-pt;} else { place(-90+((ts-t0-off)/PERIOD)*360); } pt=ts; requestAnimationFrame(step); }
+  o.classList.add('spinning'); measure(); place(-90);
+  window.addEventListener('resize',function(){measure();});
+  o.addEventListener('mouseenter',function(){paused=true}); o.addEventListener('mouseleave',function(){paused=false});
+  if('IntersectionObserver' in window){ new IntersectionObserver(function(e){ var v=e[0].isIntersecting; if(v&&!run){run=true;t0=null;off=0;requestAnimationFrame(step);} else if(!v) run=false; }).observe(o);} else {run=true;requestAnimationFrame(step)}
+})();
+</script>
+  </div>
+</section>
+<section class="section section--ground">
+  <div class="container split">
+    <div><h2>The Family Value <em>Investment Funnel.</em></h2><p class="lead" style="margin-top:var(--s2)">Most values-based funds start with an index and remove what violates their screen. Most value investors never ask about values. This does both, in the right order.</p></div>
+    <div class="art"><figure class="fun" role="img" aria-label="A funnel: every listed company, narrowed first by your family's values, then by value, into your Family Value Portfolio.">
+  <div class="fun-rim"></div>
+  <div class="fun-t t0"><div class="in"><b>Every listed company</b></div></div>
+  <div class="fun-t t1"><div class="in"><span class="n">1</span><b>Your family&rsquo;s values</b><small>How a company makes money, who it sells to, and where its profit goes</small></div></div>
+  <div class="fun-t t2"><div class="in"><span class="n">2</span><b>Then value</b><small>Strong businesses, bought below their estimated value</small></div></div>
+  <div class="fun-neck"></div>
+  <div class="fun-out"><span>Your Family Value Portfolio</span><span class="slots"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i></span></div>
+</figure>
+<ol class="fun-key">
+  <li><span class="n">1</span><span><b>Your family&rsquo;s values</b> How a company makes money, who it sells to, and where its profit goes</span></li>
+  <li><span class="n">2</span><span><b>Then value</b> Strong businesses, bought below their estimated value</span></li>
+</ol></div>
+<script>
+(function(){
+  var f=document.querySelector('.fun'); if(!f) return;
+  if(window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  var c=document.createElement('canvas'); c.className='fun-flow'; f.appendChild(c);
+  var g=c.getContext('2d'), W=0,H=0,dpr=1, segs=[], dots=[], last=0, acc=0, run=false, seed=3;
+  function rnd(){seed=(seed*9301+49297)%233280;return seed/233280}
+  function measure(){
+    var r=f.getBoundingClientRect(); dpr=window.devicePixelRatio||1; W=r.width; H=r.height;
+    c.width=W*dpr; c.height=H*dpr; c.style.width=W+'px'; c.style.height=H+'px'; g.setTransform(dpr,0,0,dpr,0,0);
+    function y(el){var b=el.getBoundingClientRect();return [b.top-r.top,b.bottom-r.top]}
+    var t=f.querySelectorAll('.fun-t'), n=f.querySelector('.fun-neck'), o=f.querySelector('.fun-out');
+    var y0=y(t[0]),y1=y(t[1]),y2=y(t[2]),yn=y(n),yo=y(o);
+    /* half-width of the funnel (as a share of the width) at the top and bottom of each part */
+    segs=[[0,y0[0],.5,.5],[y0[0],y0[1],.5,.43],[y1[0],y1[1],.43,.33],[y2[0],y2[1],.33,.2],[yn[0],yn[1],.2,.05],[yo[0],yo[1],.05,.05]];
+    f._cut1=(y1[0]+y1[1])/2; f._cut2=(y2[0]+y2[1])/2; f._end=yo[0]+6; f._navy=y2[0];
+  }
+  function half(yy){for(var i=0;i<segs.length;i++){var s=segs[i]; if(yy<=s[1]||i==segs.length-1){var k=s[1]>s[0]?Math.max(0,Math.min(1,(yy-s[0])/(s[1]-s[0]))):0; return (s[2]+(s[3]-s[2])*k)*W;}}return 0}
+  var slots=[].slice.call(f.querySelectorAll('.slots i'));
+  slots.forEach(function(el,i){ if(i%3!==0 && i<18) return; el.classList.remove('on'); });   /* start partly filled */
+  function land(){
+    var empty=slots.filter(function(el){return !el.classList.contains('on')});
+    if(!empty.length){ var full=slots[Math.floor(rnd()*slots.length)]; full.classList.add('sold'); full.classList.remove('on');
+      setTimeout(function(){full.classList.remove('sold')},700); empty=[full]; }
+    var el=empty[Math.floor(rnd()*empty.length)]; setTimeout(function(){el.classList.add('on','new'); setTimeout(function(){el.classList.remove('new')},600)},empty.length===1?350:0);
+  }
+  var lastSwap=-1e9;
+  function full(){return slots.every(function(el){return el.classList.contains('on')})}
+  function spawn(){ var r=rnd(), fate=r<.55?1:(r<.8?2:0);
+    if(fate===0&&full()){ var now=performance.now(); if(now-lastSwap<14000) fate=2; else lastSwap=now; }
+    dots.push({u:(rnd()*2-1)*.8, y:2, v:42+rnd()*18, fate:fate, out:0, dx:0, a:0}); }
+  function step(ts){
+    if(!run){last=0;return}
+    if(!last) last=ts; var dt=Math.min(.05,(ts-last)/1000); last=ts; acc+=dt;
+    if(acc>.32){acc=0; spawn();}
+    g.clearRect(0,0,W,H);
+    for(var i=dots.length-1;i>=0;i--){
+      var d=dots[i];
+      if(!d.out){
+        d.v+=dt*14; d.y+=d.v*dt; d.a=Math.min(1,d.a+dt*3);
+        if((d.fate==1&&d.y>f._cut1)||(d.fate==2&&d.y>f._cut2)){ d.out=1; d.x=W/2+d.u*half(d.y)*.82; d.dx=(d.u<0?-1:1)*(60+rnd()*40); }
+      } else { d.x+=d.dx*dt; d.y+=d.v*.35*dt; d.a-=dt*1.4; }
+      if(!d.out&&d.y>f._end){land();dots.splice(i,1);continue;}
+      if(d.a<=0){dots.splice(i,1);continue;}
+      var x=d.out?d.x:W/2+d.u*half(d.y)*.82;
+      var fade=d.y>f._end-30?Math.max(0,(f._end-d.y)/30):1;
+      g.globalAlpha=Math.max(0,d.a)*fade*.8;
+      g.beginPath(); g.arc(x,d.y,3,0,6.283);
+      g.fillStyle=d.out?'#8a9ab5':(d.y>f._navy?'#ffffff':'#1a3a6e'); g.fill();
+    }
+    g.globalAlpha=1; requestAnimationFrame(step);
+  }
+  measure(); window.addEventListener('resize',measure);
+  if('IntersectionObserver' in window){ new IntersectionObserver(function(e){ var v=e[0].isIntersecting; if(v&&!run){run=true;requestAnimationFrame(step)} else if(!v) run=false; }).observe(f);} else {run=true;requestAnimationFrame(step)}
+})();
+</script>
+  </div>
+</section>
+<section class="section">
+  <div class="container">
+    <div class="head"><h2>Five key tenets. <em>Centered on family values.</em></h2><p class="lead">Companies are filtered according to these standards, regardless of price. The screen is informed by the U.S. Conference of Catholic Bishops&rsquo; investing guidelines, papal teaching, and other Christian screening approaches.</p></div>
+    <div class="grid grid-5 compact"><div class="card"><span class="icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 20s-7-4.4-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 10c0 5.6-7 10-7 10z"/></svg></span><h3>Protecting human life</h3><p>From natural conception to natural death.</p></div><div class="card"><span class="icon" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="9" cy="8" r="3"/><circle cx="17" cy="9" r="2.5"/><path d="M3 20c0-3.3 2.7-6 6-6s6 2.7 6 6"/><path d="M15.5 14.6c2.6.2 4.5 2.4 4.5 5.4"/></svg></span><h3>Promoting the common good</h3><p>Businesses that serve the good of all people.</p></div><div class="card"><span class="icon" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="7.5" r="3.2"/><path d="M5.5 20c0-3.6 2.9-6.5 6.5-6.5s6.5 2.9 6.5 6.5"/></svg></span><h3>Upholding human dignity</h3><p>Every person valued, every person treated with respect.</p></div><div class="card"><span class="icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 4v16M6 20h12M5 8h14"/><path d="M5 8l-2.5 5.5a2.6 2.6 0 0 0 5 0zM19 8l-2.5 5.5a2.6 2.6 0 0 0 5 0z"/></svg></span><h3>Seeking economic justice</h3><p>Fair wages, fair dealing, and honest work.</p></div><div class="card"><span class="icon" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.5"/><path d="M3.5 12h17M12 3.5c2.4 2.3 3.6 5.1 3.6 8.5s-1.2 6.2-3.6 8.5c-2.4-2.3-3.6-5.1-3.6-8.5s1.2-6.2 3.6-8.5z"/></svg></span><h3>Protecting our home</h3><p>Treating creation with responsibility.</p></div></div>
+  </div>
+</section>
+<section class="section section--ground">
+  <div class="container">
+    <div class="head"><h2>Deep value <em>investing.</em></h2><p class="lead">I define risk as the chance of permanently losing money, not short-term swings. In the tradition of the great value investors, I look for:</p></div>
+    <div class="grid grid-5 compact"><div class="card"><span class="icon" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="3.5" y="5" width="17" height="15" rx="2"/><path d="M3.5 10h17M8 3v4M16 3v4"/></svg></span><h3>Long-term focus</h3><p>Valued on long-term outlooks, not short-term swings.</p></div><div class="card"><span class="icon" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.5"/><path d="M15.5 8.5l-2 5-5 2 2-5z"/></svg></span><h3>Misunderstood businesses</h3><p>Out-of-favor companies the market has overlooked or misread.</p></div><div class="card"><span class="icon" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="4" y="4" width="16" height="16" rx="3"/><path d="M8 12l3 3 5-6"/></svg></span><h3>Concentrated portfolio</h3><p>Fewer than 25 holdings I understand, rebalanced by the size of the discount.</p></div><div class="card"><span class="icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 20V11M10 20V5M16 20v-6M2 20h20"/></svg></span><h3>Small to mid cap</h3><p>Smaller public companies, where careful research matters most.</p></div><div class="card"><span class="icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M3 12V4h8l10 10-8 8z"/><circle cx="7.5" cy="7.5" r="1.2"/></svg></span><h3>Bought at a good price</h3><p>Conservatively valued on its track record, bought only at a discount to that value.</p></div></div>
+  </div>
+</section>
+<section class="section">
+  <div class="container">
+    <div class="head"><h2>Where does this <em>portfolio belong?</em></h2><p class="lead">In your own account, alongside your current strategy, or as part of the whole picture.</p></div>
+    <div class="grid grid-2">
+      <div class="card card--flat"><span class="icon" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="9" cy="8" r="3"/><circle cx="17" cy="9" r="2.5"/><path d="M3 20c0-3.3 2.7-6 6-6s6 2.7 6 6"/><path d="M15.5 14.6c2.6.2 4.5 2.4 4.5 5.4"/></svg></span><h3>Already have an adviser?</h3><p>Great. I can work with them. The portfolio can be the values-aligned portion of your overall strategy.</p></div>
+      <div class="card card--flat"><span class="icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 11l8-7 8 7v9H4z"/><path d="M10 20v-5h4v5"/></svg></span><h3>For my Family CFO partners</h3><p>For families who want their entire financial plan under one roof, it could fit alongside a more conventional global allocation.</p></div>
+    </div>
+  </div>
+</section>
+<section class="section section--tight">
+  <div class="container">
+    <div class="cta">
+      <div><h2>Interested in joining the Family Value Portfolio?</h2><p>A twenty-minute call. If you have an adviser, please feel free to invite them.</p></div>
+      <div class="actions"><a class="btn btn--light" href="https://outlook.office.com/book/MolokaiInvestments@molokaiinvestments.com/?ismsaljsauthenabled" target="_blank" rel="noopener">Pick a time</a><a class="btn btn--ghost-light" href="contact.html">Send a note</a></div>
+    </div>
+  </div>
+</section>
+<section class="section section--tight">
+  <div class="container">
+    <div class="card risk">
+      <div class="risk-head"><span class="icon" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.5"/><path d="M12 11v5.5M12 7.6v.2"/></svg></span><h3>Risk information</h3></div>
+      <ul>
+        <li>Concentrated in individual stocks</li>
+        <li>Focused on the U.S., at times including companies abroad</li>
+        <li>May not move with the market, and may trail it in some years</li>
+        <li>Not intended for money needed in the next few years</li>
+        <li>Carries the risk of loss of principal, like any investment</li>
+        <li>The values screen narrows the universe, which can affect returns</li>
+      </ul>
+      <p class="small">Accounts are separately managed at Interactive Brokers, in your name. No performance is shown. Fees are described in Form ADV Part 2A.</p>
+    </div>
+  </div>
+</section>
+<footer class="footer">
+  <div class="container">
+    <div><img src="logo.png" alt="Molokai Investments" /><p>1009 New Creek Way<br />Wake Forest, NC 27587<br /><a href="tel:+19194954027">(919) 495-4027</a><br /><a href="mailto:matthew@molokaiinvestments.com">matthew@molokaiinvestments.com</a></p></div>
+    <div><h4>Explore</h4><ul><li><a href="family-cfo.html">Family CFO</a></li><li><a href="strategy.html">The Family Value Portfolio</a></li><li><a href="report.html">Your free readiness report</a></li><li><a href="contact.html">Contact</a></li></ul></div>
+    <p class="legal">Molokai Investments LLC is a registered investment adviser in the State of North Carolina. Registration does not imply a certain level of skill or training. Molokai Family &amp; Business Integration is a trade name of Molokai Investments LLC. This website is for informational purposes only and does not constitute investment, legal, or tax advice; your attorney and CPA provide legal and tax advice, and I coordinate with them. The planning-level value estimate is for planning purposes only and is not an appraisal. Investing involves risk, including the possible loss of principal. Complete fee information is in Form ADV Part 2A, provided before any agreement is signed. Prices shown as of November 2026. &copy; 2026 Molokai Investments LLC.</p>
+  </div>
+</footer>
+</body>
+</html>

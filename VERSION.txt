@@ -1,0 +1,4 @@
+Molokai Website — current version: 2026-11-03 (design system rebuild)
+Pages: index.html, family-cfo.html, strategy.html, checklist.html
+Shared: style.css, logo.png, matthew.png, thanks.html
+Older versions: ../Website Archive/<date>/

@@ -1,0 +1,1188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Your Family Financial Readiness Report | Molokai Investments</title>
+  <meta name="description" content="A free five-minute readiness report for husband-and-wife business owners: what is in place, what is missing, and who to take each gap to." />
+  <link rel="icon" type="image/png" href="logo.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Jost:wght@300;400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css?v=202611062201" />
+  <link rel="stylesheet" href="inventory.css?v=202611062201" />
+</head>
+<body>
+<header class="nav">
+  <div class="container">
+    <a class="brand" href="index.html"><img src="logo.png" alt="Molokai Investments" /><span>Family business,<br />in that order.</span></a>
+    <button class="menu-toggle" aria-expanded="false" aria-controls="menu">Menu</button>
+    <nav class="menu" id="menu" aria-label="Main"><a href="family-cfo.html">Family CFO</a><a href="strategy.html">Family Value Portfolio</a><a href="report.html" aria-current="page">Free report</a><a href="about.html">About</a><a href="contact.html" class="btn btn--primary">Book a call</a></nav>
+  </div>
+</header>
+<script>document.querySelector('.menu-toggle').addEventListener('click',function(){var m=document.getElementById('menu');var o=m.classList.toggle('open');this.setAttribute('aria-expanded',o)});</script>
+<section class="hero">
+  <div class="container split">
+    <div>
+      <p class="kicker">Free &middot; five minutes &middot; no email</p>
+      <h1>Your Family Financial <em>Readiness Report.</em></h1>
+      <p class="lead">A few questions about the documents, the advisers, and the plan behind your family and your business. You get a written report of what&rsquo;s in place, what&rsquo;s missing, and who can help you with each.</p>
+      <div class="actions"><a class="btn btn--primary" href="#gapcheck">Start my report</a><a class="btn btn--secondary" href="family-cfo.html">About the Family CFO</a></div>
+      <div class="trust"><span>CFA charterholder</span><span>NC-registered investment adviser</span><span>Wake Forest, North Carolina</span></div>
+    </div>
+    <div class="art"><div class="card report-art" role="img" aria-label="A sample page of the report: three open items, each with who to take it to.">
+  <p class="small">Sample</p><h3>Your Family Financial Readiness Report</h3>
+  <ul>
+    <li><span class="n">1</span><span>Beneficiary designations unconfirmed<small>Take to: the two of you</small></span></li>
+    <li><span class="n">2</span><span>No buy-sell agreement<small>Take to: your attorney</small></span></li>
+    <li><span class="n">3</span><span>Household numbers not clearly tracked<small>Take to: your CPA</small></span></li>
+  </ul>
+</div><p class="art-cap">Ordered according to importance.</p></div>
+  </div>
+</section>
+<section class="section section--ground" id="gapcheck">
+  <div class="container">
+    <div class="head"><h2>Start here. <em>Complete it together or on your own.</em></h2><p class="lead">You&rsquo;ll see which pieces of your family&rsquo;s plan are in place, which are missing, and the order I&rsquo;d work through them with you. Download the resulting report for your records.</p></div>
+    <div class="inventory-wrap"><div class="quiz-card" id="quizCard"></div></div>
+  </div>
+</section>
+<section class="section section--tight section--ground">
+  <div class="container">
+    <div class="cta">
+      <div><h2>Begin with a twenty-minute call.</h2><p>Let&rsquo;s discuss what&rsquo;s taking away time from your family.</p></div>
+      <div class="actions"><a class="btn btn--light" href="https://outlook.office.com/book/MolokaiInvestments@molokaiinvestments.com/?ismsaljsauthenabled" target="_blank" rel="noopener">Pick a time</a><a class="btn btn--ghost-light" href="contact.html">Send a note</a></div>
+    </div>
+  </div>
+</section>
+<footer class="footer">
+  <div class="container">
+    <div><img src="logo.png" alt="Molokai Investments" /><p>1009 New Creek Way<br />Wake Forest, NC 27587<br /><a href="tel:+19194954027">(919) 495-4027</a><br /><a href="mailto:matthew@molokaiinvestments.com">matthew@molokaiinvestments.com</a></p></div>
+    <div><h4>Explore</h4><ul><li><a href="family-cfo.html">Family CFO</a></li><li><a href="strategy.html">The Family Value Portfolio</a></li><li><a href="report.html">Your free readiness report</a></li><li><a href="contact.html">Contact</a></li></ul></div>
+    <p class="legal">Molokai Investments LLC is a registered investment adviser in the State of North Carolina. Registration does not imply a certain level of skill or training. Molokai Family &amp; Business Integration is a trade name of Molokai Investments LLC. This website is for informational purposes only and does not constitute investment, legal, or tax advice; your attorney and CPA provide legal and tax advice, and I coordinate with them. The planning-level value estimate is for planning purposes only and is not an appraisal. Investing involves risk, including the possible loss of principal. Complete fee information is in Form ADV Part 2A, provided before any agreement is signed. Prices shown as of November 2026. &copy; 2026 Molokai Investments LLC.</p>
+  </div>
+</footer>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdf-lib/1.17.1/pdf-lib.min.js"></script>
+  <script>
+    /* ---------- SCROLL REVEAL ---------- */
+    const reveals = document.querySelectorAll('.reveal');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry, i) => {
+        if (entry.isIntersecting) {
+          setTimeout(() => entry.target.classList.add('visible'), i * 80);
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.1 });
+    reveals.forEach(el => observer.observe(el));
+
+    /* ---------- THE READINESS INVENTORY ---------- */
+    /* rank = the order I would work through these in. Lower runs first.
+       cond = only asked when a prior answer makes it relevant. */
+    const QUESTIONS = [
+      {
+        g: 'Your Business', rank: 14, pro: 'Your business attorney',
+        q: 'Is there a written transition plan for the business — who takes over, and when?',
+        gap: 'No written transition plan',
+        why: 'Without one the plan lives in your head, and the people who would have to carry it out are guessing.',
+        first: 'Sits later in the order on purpose — a transition plan written before you know what the business is worth and who is legally able to act tends to get rewritten.',
+        who: 'You, with your business attorney'
+      },
+      {
+        g: 'Your Business', rank: 8, pro: 'Nobody but the two of you',
+        q: 'If the owner were unavailable for ninety days, is there a written plan for who runs the business?',
+        gap: 'No ninety‑day continuity plan',
+        why: 'Ninety days is long enough to lose customers, key staff, and lender confidence — and long enough that the decisions get made by whoever happens to be standing closest.',
+        first: 'Independent of the legal documents, so it can move in parallel rather than waiting in line behind them.',
+        who: 'Usually nobody owns this one — it is the coordination gap itself'
+      },
+      {
+        g: 'Your Business', urgent: true, rank: 9, pro: 'Your business attorney',
+        q: 'Is there a buy‑sell agreement covering what happens to ownership if an owner dies, becomes disabled, or wants out?',
+        gap: 'No buy‑sell agreement',
+        why: 'Without one, ownership can pass to people who have never run the business — including a partner’s heirs, or your own.',
+        first: 'This is where the business and the family meet. Until it exists in writing, several of the other business items cannot be finalized.',
+        who: 'Business attorney'
+      },
+      {
+        g: 'Your Business', urgent: true, rank: 10, pro: 'Your business attorney', cond: { on: 2, val: 'yes' },
+        q: 'Is that agreement funded — is there money or insurance actually behind it?',
+        gap: 'Buy‑sell agreement unfunded or funding unverified',
+        why: 'An unfunded agreement is a promise to buy something with money nobody has set aside.',
+        first: 'Follows directly behind the agreement itself, and is the more dangerous of the two — because on paper it already looks solved.',
+        who: 'Business attorney, with your insurance professional'
+      },
+      {
+        g: 'Your Business', rank: 11, pro: 'Your CPA',
+        q: 'Do you know what the business is worth today, based on a professional analysis rather than an estimate?',
+        gap: 'No current, defensible valuation',
+        why: 'Most of the family’s net worth usually sits inside this one number. Transition planning, buy‑sell funding, and estate exposure are all sized off it.',
+        first: 'Several later items need this number before they can be sized correctly, which is why it sits ahead of them rather than at the end.',
+        who: 'Valuation professional or CPA'
+      },
+      {
+        g: 'Your Business', rank: 6, pro: 'Nobody but the two of you',
+        q: 'Are your entity documents gathered and organized — formation papers, operating agreement, ownership records?',
+        gap: 'Entity documents scattered or incomplete',
+        why: 'These are the documents every professional asks for first, and the ones that take longest to reconstruct when nobody has kept them in one place.',
+        first: 'Early because it is ordinary organizing work rather than legal work, and because almost everything below moves faster once these are in hand.',
+        who: 'You — no professional required'
+      },
+      {
+        g: 'Your Household', rank: 5, pro: 'Nobody but the two of you',
+        q: 'Are your personal documents organized in one place — property and vehicle titles, mortgage information, policies?',
+        gap: 'Personal documents not organized in one place',
+        why: 'The household half of the picture usually gets less attention than the business half, and it is the half a surviving spouse needs first.',
+        first: 'Cheap, fast, and entirely within your control — and the half of the picture most likely to be needed on short notice.',
+        who: 'You — no professional required'
+      },
+      {
+        g: 'Your Household', rank: 12, pro: 'Your financial adviser',
+        q: 'Do you know your personal net worth, and what you spend in a typical month against what you take home?',
+        gap: 'Household numbers not clearly tracked',
+        why: 'Nearly every other decision here — how much coverage, how much to take out of the business, what retirement actually looks like — is sized off these two numbers.',
+        first: 'Sits behind the valuation, because for most owners the business is the largest line on the personal balance sheet.',
+        who: 'You, with your financial adviser'
+      },
+      {
+        g: 'Your Household', rank: 13, pro: 'Your insurance professional',
+        q: 'Has anyone calculated how much life insurance your family would actually need, and compared it against what you have?',
+        gap: 'Life insurance need never calculated',
+        why: 'Most coverage is bought once, at a number that made sense at the time, and never revisited as the business grows around it.',
+        first: 'Comes after the household numbers, since the calculation depends on them.',
+        who: 'Your insurance professional, with your financial adviser'
+      },
+      {
+        g: 'If Something Happened', urgent: true, rank: 2, pro: 'Your estate attorney',
+        q: 'Do you each have a current will naming an executor, plus a durable power of attorney and a healthcare directive?',
+        gap: 'Core estate documents missing or outdated',
+        why: 'These three are usually done in one sitting with one attorney. Without them, a spouse may have no legal authority to act — for the household or for the business.',
+        first: 'Near the front, because almost everything else on this list assumes somebody has the authority to act. This is that authority.',
+        who: 'Estate attorney'
+      },
+      {
+        g: 'If Something Happened', urgent: true, rank: 7, pro: 'Your estate attorney',
+        q: 'Do all of your bank, brokerage, and retirement accounts have beneficiaries designated?',
+        gap: 'Beneficiary designations missing or unconfirmed',
+        why: 'Beneficiary forms override the will. They are the single most common place a plan quietly stops matching reality.',
+        first: 'Fast and free, and it can quietly undo months of estate work if it is wrong. Worth settling before anything more complicated gets built on top of it.',
+        who: 'Each account custodian, reviewed alongside your estate attorney'
+      },
+      {
+        g: 'If Something Happened', rank: 15, pro: 'Your estate attorney',
+        q: 'Do your estate documents and your business transition documents agree with each other?',
+        gap: 'Estate and business documents never reconciled',
+        why: 'They are usually written years apart by different people. Where they conflict, the conflict surfaces at the worst possible moment.',
+        first: 'Needs your attorneys in the same conversation, which takes scheduling — worth opening early even though it tends to finish late.',
+        who: 'Estate attorney and business attorney, together'
+      },
+      {
+        g: 'If Something Happened', urgent: true, rank: 1, pro: 'Nobody but the two of you',
+        q: 'Could your spouse, or another trusted person, find the accounts, documents, passwords, and advisers within a week?',
+        gap: 'No access map for the people who would need it',
+        why: 'This is the question that most often goes unasked, and it lands on one spouse during the worst week of their life.',
+        first: 'I would start here. It costs nothing, needs no professional, and is an afternoon of writing things down — and it is the only item on this list that would help your family next week rather than next year.',
+        who: 'The two of you — and it needs to exist in writing'
+      },
+      {
+        g: 'Direction &amp; Coordination', rank: 4, pro: 'Nobody but the two of you',
+        q: 'Do you have a CPA, an estate attorney, and a financial adviser you trust?',
+        gap: 'Gaps in your professional team',
+        why: 'Not every family needs all three at once. Knowing which ones your situation actually calls for is the difference between building a team and collecting one.',
+        first: 'Early, because most of the items below need one of these people — and hiring the wrong one first is expensive to undo.',
+        who: 'Worth a conversation before you hire anybody'
+      },
+      {
+        g: 'Direction &amp; Coordination', rank: 3, pro: 'Nobody but the two of you',
+        q: 'Have you written down where you want the business and the family to be in five, ten, and twenty years?',
+        gap: 'Long‑term goals never written down',
+        why: 'Every professional you work with is optimizing toward something. If the destination has never been written down, each of them is guessing at it separately.',
+        first: 'Near the front because it is the only item that changes the answer to all the others. A transition plan without a destination is just paperwork.',
+        who: 'The two of you, before anyone else'
+      },
+      {
+        g: 'Direction &amp; Coordination', rank: 16, pro: 'Nobody but the two of you',
+        q: 'Is there one written document showing the whole picture: entities, accounts, policies, advisers, and the plan ahead?',
+        gap: 'No single integrated picture exists',
+        why: 'If the answer is no, every professional you work with is making recommendations with a partial view of your family.',
+        first: 'Last in the order because it is the output of the work rather than a task of its own — it assembles itself as the items above get closed.',
+        who: 'This is the whole point of integration'
+      }
+    ];
+
+    const BANDS = [
+      { max: 2,
+        title: 'Unusually well put together.',
+        body: 'Very few business‑owning families get here, and it is worth saying plainly: you have done the work. What matters now is keeping it current, because documents drift as a business grows. The items below are where I would look first.' },
+      { max: 6,
+        title: 'A real foundation, with specific holes.',
+        body: 'The core is in place, which puts you ahead of most. The open items below tend to be the ones that were started and never quite finished — the kind that stay invisible right up until the moment they matter.' },
+      { max: 11,
+        title: 'The pieces exist. Nobody has assembled them.',
+        body: 'This is the most common result, and it is almost never about neglect. It is what happens when good professionals each do their own piece well and nobody owns the whole. The order below is how I would work through it.' },
+      { max: 99,
+        title: 'Most of the picture is undocumented.',
+        body: 'More common than you would think, particularly for owners who spent the last decade building rather than organizing. The list below is finite, it is ordinary work, and it does not have to happen all at once — but it does need a sequence, and one is laid out for you here.' }
+    ];
+
+    /* asked last, deliberately not scored — it is about how the work feels,
+       not about whether a document exists */
+    const CLOSING = {
+      q: 'Do you spend hours coordinating your advisers and still not have a clear view of your overall strategy?',
+      opts: [
+        { v: 'yes',       label: 'Yes — that is exactly it' },
+        { v: 'sometimes', label: 'Sometimes' },
+        { v: 'no',        label: 'No — I have a clear picture' }
+      ]
+    };
+
+    const quizCard = document.getElementById('quizCard');
+    let step = -1;                     /* -1 intro · -2 couple setup · -3 handoff */
+    let mode = 'solo';                 /* 'solo' | 'couple' */
+    let person = 0;                    /* whose turn, couple mode */
+    const names = ['Partner 1', 'Partner 2'];
+    const answersP = [new Array(QUESTIONS.length).fill(null),
+                      new Array(QUESTIONS.length).fill(null)];
+    let answers = answersP[0];         /* the sheet being written this turn */
+    const closingP = [null, null];
+    let closingAnswer = null;
+
+    function escName(v, fb) {
+      v = String(v || '').replace(/[<>&"'`]/g, '').trim().slice(0, 18);
+      return v || fb;
+    }
+    function lab(v) {
+      return v === null ? 'not asked' :
+             v === 'yes' ? 'In place' :
+             v === 'no' ? 'Not in place' : 'Not sure';
+    }
+
+    /* a question is asked only when its condition is met — for the current sheet */
+    function applies(i) {
+      const c = QUESTIONS[i].cond;
+      if (!c) return true;
+      return answers[c.on] === c.val;
+    }
+    function appliesFor(p, i) {
+      const c = QUESTIONS[i].cond;
+      if (!c) return true;
+      return answersP[p][c.on] === c.val;
+    }
+
+    /* one row per question asked to anybody, with the combined verdict.
+       In place requires BOTH to say yes; any difference is flagged. */
+    function combinedRows() {
+      const rows = [];
+      QUESTIONS.forEach((q, i) => {
+        if (mode === 'solo') {
+          if (!appliesFor(0, i)) return;
+          const a = answersP[0][i];
+          rows.push({ item: q, a: a, b: null, kind: a, div: false });
+          return;
+        }
+        const inA = appliesFor(0, i), inB = appliesFor(1, i);
+        if (!inA && !inB) return;
+        const a = inA ? answersP[0][i] : null;
+        const b = inB ? answersP[1][i] : null;
+        let div, kind;
+        if (inA && inB) {
+          div = a !== b;
+          if (a === 'yes' && b === 'yes') kind = 'yes';
+          else if (!div) kind = a;
+          else kind = (a === 'no' || b === 'no') ? 'no' : 'unsure';
+        } else {
+          /* only one of them was even asked (their buy-sell answers differ) */
+          div = true;
+          const solo = inA ? a : b;
+          kind = solo === 'yes' ? 'unsure' : solo;
+        }
+        rows.push({ item: q, a: a, b: b, kind: kind, div: div });
+      });
+      rows.sort((x, y) => x.item.rank - y.item.rank);
+      return rows;
+    }
+    function asked() {
+      const out = [];
+      QUESTIONS.forEach((q, i) => { if (applies(i)) out.push(i); });
+      return out;
+    }
+    function nextFrom(i) {
+      let n = i;
+      while (n < QUESTIONS.length && !applies(n)) n++;
+      return n;
+    }
+    function prevFrom(i) {
+      let p = i;
+      while (p >= 0 && !applies(p)) p--;
+      return p;
+    }
+
+    function renderIntro() {
+      quizCard.classList.remove('qmode');
+      quizCard.innerHTML =
+        '<div style="margin:auto;text-align:center;max-width:540px;">' +
+          '<h3 class="quiz-question" style="flex-grow:0;margin-bottom:1.4rem;">Are there gaps in your family plan?</h3>' +
+          '<p style="font-size:0.87rem;line-height:1.9;color:var(--text-muted);margin-bottom:1.2rem;">' +
+            'Answer honestly rather than optimistically. If your answer is <em>not sure</em>, that’s okay! You’re not alone, and knowing what you can’t confirm is a great place to start.' +
+          '</p>' +
+          '<div class="mode-btns">' +
+            '<button class="btn-primary" onclick="startQuiz()">Just Me &mdash; Begin &rarr;</button>' +
+            '<button class="btn-ghost" onclick="startCoupleSetup()">Both of Us &mdash; Together &rarr;</button>' +
+          '</div>' +
+          '<p class="mode-note">If you&rsquo;re taking it together, you&rsquo;ll each answer separately, one after the other. Your results will show where the two of you differ. That difference is a legitimate thing to work through, and often the most useful part.</p>' +
+        '</div>';
+    }
+
+    function renderCoupleSetup() {
+      quizCard.classList.remove('qmode');
+      quizCard.innerHTML =
+        '<div style="margin:auto;text-align:center;max-width:560px;">' +
+          '<h3 class="quiz-question" style="flex-grow:0;margin-bottom:1.2rem;">Two of you, one at a time.</h3>' +
+          '<p style="font-size:0.87rem;line-height:1.9;color:var(--text-muted);">' +
+            'You&rsquo;ll each answer the same questions &mdash; separately, without conferring, and without seeing each other&rsquo;s answers. First names are optional; they just make your results easier to read.' +
+          '</p>' +
+          '<div class="setup-fields">' +
+            '<div class="form-group"><label for="cName0">Going first (optional)</label>' +
+              '<input type="text" id="cName0" maxlength="18" placeholder="First name" autocomplete="off" /></div>' +
+            '<div class="form-group"><label for="cName1">Going second (optional)</label>' +
+              '<input type="text" id="cName1" maxlength="18" placeholder="First name" autocomplete="off" /></div>' +
+          '</div>' +
+          '<button class="btn-primary" onclick="beginCouple()">Start the First Turn &rarr;</button>' +
+        '</div>';
+    }
+
+    function renderHandoff() {
+      quizCard.classList.remove('qmode');
+      quizCard.innerHTML =
+        '<div style="margin:auto;text-align:center;max-width:560px;">' +
+          '<p class="quiz-group" style="margin-bottom:1.2rem;">First Half Is In</p>' +
+          '<h3 class="quiz-question" style="flex-grow:0;margin-bottom:1.4rem;">Now, it&rsquo;s ' + names[1] + '&rsquo;s turn.</h3>' +
+          '<p style="font-size:0.87rem;line-height:1.9;color:var(--text-muted);margin-bottom:2.2rem;">' +
+            names[1] + ', you answer the same questions now. Please answer for yourself without comparing notes. Where your answers differ provides a lot of helpful information for us to work through.' +
+          '</p>' +
+          '<button class="btn-primary" onclick="beginSecond()">I&rsquo;m ' + names[1] + ' &mdash; Start My Questions &rarr;</button>' +
+        '</div>';
+    }
+
+    window.startCoupleSetup = function () { step = -2; renderCoupleSetup(); };
+
+    window.beginCouple = function () {
+      names[0] = escName(document.getElementById('cName0').value, 'Partner 1');
+      names[1] = escName(document.getElementById('cName1').value, 'Partner 2');
+      mode = 'couple'; person = 0; answers = answersP[0];
+      step = nextFrom(0); renderQuestion();
+      quizCard.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    };
+
+    window.beginSecond = function () {
+      person = 1; answers = answersP[1];
+      step = nextFrom(0); renderQuestion();
+      quizCard.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    };
+
+    function shellHTML(group, pos, total, showKeys, stripRight) {
+      let tiles = '', segs = '';
+      for (let i = 1; i <= total; i++) {
+        const st = i < pos ? 'done' : i === pos ? 'now' : 'todo';
+        tiles += '<div class="q-tile ' + st + '"></div>';
+        segs += '<div class="q-seg ' + st + '"></div>';
+      }
+      return '<div class="q-rail">' +
+          '<p class="q-rail-label">Family Readiness</p>' +
+          (mode === 'couple' ? '<p class="q-rail-turn">' + names[person] + '&rsquo;s turn</p>' : '') +
+          '<p class="q-count">' + String(pos).padStart(2, '0') + '</p>' +
+          '<p class="q-count-sub">of ' + total + ' questions</p>' +
+          '<div class="q-rail-bottom">' +
+            '<p class="q-tiles-label">Your picture so far</p>' +
+            '<div class="q-tiles">' + tiles + '</div>' +
+            (showKeys ? '<p class="q-keys">Keys: Y &middot; N &middot; ?</p>' : '') +
+          '</div>' +
+        '</div>' +
+        '<div class="q-strip">' +
+          '<div class="q-strip-meta">' +
+            '<span class="quiz-group">' + group + '</span>' +
+            '<span class="q-strip-count">' + (stripRight || (pos + ' <span>OF ' + total + '</span>')) + '</span>' +
+          '</div>' +
+          '<div class="q-segs">' + segs + '</div>' +
+        '</div>';
+    }
+
+    function renderQuestion() {
+      const item = QUESTIONS[step];
+      const list = asked();
+      const pos = list.indexOf(step) + 1;
+      const total = list.length;
+      const firstStep = prevFrom(step - 1) < 0;
+      quizCard.classList.add('qmode');
+      quizCard.innerHTML =
+        shellHTML(item.g, pos, total, true) +
+        '<div class="q-main">' +
+          '<div class="quiz-progress-meta" style="margin-bottom:1.3rem;">' +
+            '<span class="quiz-group">' + item.g + '</span>' +
+            '<span class="quiz-step-num">Question ' + pos + ' of ' + total + '</span>' +
+          '</div>' +
+          '<h3 class="quiz-question">' + item.q + '</h3>' +
+          '<div class="quiz-options">' +
+            '<button class="quiz-opt" onclick="answer(\'yes\')"><span class="quiz-opt-key">Y</span>Yes — this is in place and current</button>' +
+            '<button class="quiz-opt" onclick="answer(\'no\')"><span class="quiz-opt-key">N</span>No — this has not been done</button>' +
+            '<button class="quiz-opt" onclick="answer(\'unsure\')"><span class="quiz-opt-key">?</span>Not sure — I couldn’t say for certain</button>' +
+          '</div>' +
+          '<div class="quiz-nav">' +
+            '<button class="quiz-back" onclick="goBack()"' + (firstStep ? ' disabled' : '') + '>&larr; Back</button>' +
+            '<span class="quiz-note">' + (mode === 'couple' ? names[person] + ' is answering.' : 'Your answers stay in your browser.') + '</span>' +
+          '</div>' +
+        '</div>';
+    }
+
+    function renderClosing() {
+      let opts = '';
+      CLOSING.opts.forEach(o => {
+        opts += '<button class="quiz-opt" onclick="answerClosing(\'' + o.v + '\')">' +
+                '<span class="quiz-opt-key">&middot;</span>' + o.label + '</button>';
+      });
+      const total = asked().length;
+      quizCard.classList.add('qmode');
+      quizCard.innerHTML =
+        shellHTML('One Last Question', total + 1, total + 1, false, '&#10003;') +
+        '<div class="q-main">' +
+          '<div class="quiz-progress-meta closing-meta" style="margin-bottom:1.3rem;">' +
+            '<span class="quiz-group">One Last Question</span>' +
+            '<span class="quiz-step-num">Not counted in your results</span>' +
+          '</div>' +
+          '<h3 class="quiz-question">' + CLOSING.q + '</h3>' +
+          '<div class="quiz-options">' + opts + '</div>' +
+          '<div class="quiz-nav">' +
+            '<button class="quiz-back" onclick="goBack()">&larr; Back</button>' +
+            '<span class="quiz-note">This one is just for me.</span>' +
+          '</div>' +
+        '</div>';
+    }
+
+    function openItems() {
+      return combinedRows().filter(r => r.kind !== 'yes');
+    }
+
+    let gapCheckConverted = false;
+    function renderResults() {
+      if (!gapCheckConverted && typeof gtag === 'function') {
+        gtag('event', 'conversion', {'send_to': 'AW-18529261772/zUXWCIr_8aQdEMyxuINF'});
+        gapCheckConverted = true;
+      }
+      quizCard.classList.remove('qmode');
+      const ordered = combinedRows();
+      const gaps = ordered.filter(r => r.kind !== 'yes');
+      const open = gaps.length;
+      const totalAsked = ordered.length;
+      const yesCount = totalAsked - open;
+      const divRows = gaps.filter(g => g.div);
+      const unsureCount = gaps.filter(g => !g.div && g.kind === 'unsure').length;
+      const band = BANDS.find(b => open <= b.max);
+      const starts = gaps.slice(0, 3);
+      const rest = gaps.slice(3);
+
+      let tiles = '';
+      ordered.forEach(o => {
+        const cls = o.kind === 'yes' ? 'filled' : (o.div ? 'div' : 'open');
+        const glyph = o.kind === 'yes' ? '&#10003;' : (o.div ? '&ne;' : '?');
+        const title = (mode === 'couple' && o.div)
+          ? names[0] + ': ' + lab(o.a) + ' / ' + names[1] + ': ' + lab(o.b) + ' — ' + o.item.gap
+          : (o.kind === 'yes' ? 'In place: ' : 'Open: ') + o.item.gap;
+        tiles += '<div class="tile ' + cls + '" title="' + title + '">' + glyph + '</div>';
+      });
+
+      let html =
+        '<div class="screen-results">' +
+        '<div class="grid-wrap">' +
+          '<div class="grid-tiles">' + tiles + '</div>' +
+          '<div class="grid-legend">' +
+            '<span><i class="legend-swatch filled"></i>' + (mode === 'couple' ? 'Both said in place' : 'In place') + '</span>' +
+            '<span><i class="legend-swatch open"></i>Still missing</span>' +
+            (mode === 'couple' && divRows.length ? '<span><i class="legend-swatch div"></i>You answered differently</span>' : '') +
+          '</div>' +
+          '<p class="grid-caption">Your picture, left to right, in the order I&rsquo;d work through it.</p>' +
+        '</div>' +
+        '<div class="quiz-result-head">' +
+          '<div class="quiz-score">' + open + '<span> of ' + totalAsked + '</span></div>' +
+          '<p class="quiz-group" style="margin-bottom:1.1rem;">Pieces Still Missing</p>' +
+          '<p class="quiz-band">' + band.title + '</p>' +
+          '<p class="quiz-band-body">' + band.body + '</p>' +
+          (mode === 'couple'
+            ? '<p class="quiz-band-body" style="margin-top:0.9rem;"><b style="font-weight:500;color:var(--text);">Taken together:</b> ' +
+              names[0] + ' and ' + names[1] + ' gave the same answer on ' + (totalAsked - divRows.length) + ' of ' + totalAsked +
+              (divRows.length ? ', and answered differently on ' + divRows.length + '.' : '.') + '</p>'
+            : '') +
+        '</div>';
+
+      const urgent = gaps.filter(g => g.item.urgent);
+      if (urgent.length) {
+        let bullets = '';
+        urgent.forEach(u => { bullets += '<li>' + u.item.gap + '</li>'; });
+        html +=
+          '<div class="urgent-flag">' +
+            '<p class="urgent-kicker">Time&#8209;Sensitive</p>' +
+            '<p class="urgent-flag-head">' +
+              (urgent.length === 1
+                ? 'One of these is time&#8209;sensitive.'
+                : urgent.length + ' of these are time&#8209;sensitive.') +
+            '</p>' +
+            '<p class="urgent-flag-body">' +
+              'Most of what follows can be worked through over months, in the order below. ' +
+              (urgent.length === 1 ? 'This one is different' : 'These are different') +
+              ' &mdash; not because ' + (urgent.length === 1 ? 'it is' : 'they are') +
+              ' complicated, but because ' + (urgent.length === 1 ? 'it is' : 'they are') +
+              ' what determines how the days immediately after a death or an accident actually go. ' +
+              'That is true no matter how the rest of your picture looks.' +
+            '</p>' +
+            '<ul>' + bullets + '</ul>' +
+          '</div>';
+      }
+
+      if (mode === 'couple' && divRows.length) {
+        let rowsHtml = '';
+        divRows.forEach(d => {
+          rowsHtml +=
+            '<div class="div-row">' +
+              '<span class="div-row-title">' + d.item.gap + '</span>' +
+              '<span class="div-row-answers"><b>' + names[0] + ':</b> ' + lab(d.a) +
+                ' &nbsp;&middot;&nbsp; <b>' + names[1] + ':</b> ' + lab(d.b) + '</span>' +
+            '</div>';
+        });
+        html +=
+          '<div class="div-flag">' +
+            '<p class="div-kicker">Answered Differently</p>' +
+            '<p class="div-head">' +
+              (divRows.length === 1 ? 'One question split the two of you.' : divRows.length + ' questions split the two of you.') +
+            '</p>' +
+            '<p class="div-body">' +
+              'These aren&rsquo;t mistakes &mdash; they&rsquo;re the most useful part of your results. A piece only one of you can confirm isn&rsquo;t truly in place yet, however certain that one of you is. Worth talking through together before anything else on this list.' +
+            '</p>' +
+            rowsHtml +
+          '</div>';
+      }
+
+      if (open === 0) {
+        html +=
+          '<div class="quiz-clear">' +
+            (mode === 'couple' ? 'You both answered yes to every question. That is genuinely rare.' : 'You answered yes to every question. That is rare, and it means the hard part is already behind you.') + ' The useful question now is not whether these things exist, but when each was last read — side by side, against the others. Documents that were correct the day they were signed drift quietly as a business grows, and drift is the thing nobody schedules a meeting about.' +
+          '</div>';
+      } else {
+        html +=
+          '<p class="quiz-items-label primary">Where I&rsquo;d Start</p>' +
+          '<p class="quiz-items-note">Of your ' + open + ' open item' + (open === 1 ? '' : 's') +
+          ', ' + (starts.length === 1 ? 'this is the one' : 'these are the ' + starts.length) +
+          ' I would take first. The order matters more than the pace &mdash; several of these depend on each other, and doing them out of sequence usually means paying for the same work twice.</p>';
+
+        starts.forEach((g, idx) => {
+          const tag = g.div ? 'You differed' : g.kind === 'unsure' ? 'Not sure' : 'Not in place';
+          const cls = g.div ? ' div' : g.kind === 'unsure' ? ' unsure' : '';
+          html +=
+            '<div class="start-item">' +
+              '<div class="start-rank">' + (idx + 1) + '</div>' +
+              '<div class="start-body">' +
+                '<div class="gap-item-top">' +
+                  '<span class="gap-item-title">' + g.item.gap + '</span>' +
+                  '<span class="gap-tag' + cls + '">' + tag + '</span>' +
+                '</div>' +
+                '<p class="gap-item-why">' + g.item.why + '</p>' +
+                (g.div ? '<p class="gap-item-who" style="margin-bottom:0.6rem;"><b>' + names[0] + ':</b> ' + lab(g.a) + ' &nbsp;&middot;&nbsp; <b>' + names[1] + ':</b> ' + lab(g.b) + '</p>' : '') +
+                '<p class="gap-item-first"><b>Why here:</b> ' + g.item.first + '</p>' +
+                '<p class="gap-item-who">Usually sits with: <b>' + g.item.who + '</b></p>' +
+              '</div>' +
+            '</div>';
+        });
+
+        if (rest.length) {
+          html +=
+            '<p class="quiz-items-label" style="margin-top:2.2rem;">Then, Roughly In This Order</p>' +
+            '<p class="quiz-items-note">Still open, but each of these reads better once the items above are settled.</p>' +
+            '<div class="ledger">';
+          rest.forEach((g, i) => {
+            const tag = g.div ? 'You differed' : g.kind === 'unsure' ? 'Not sure' : 'Not in place';
+            const cls = g.div ? ' div' : g.kind === 'unsure' ? ' unsure' : '';
+            html +=
+              '<div class="ledger-row">' +
+                '<button class="ledger-head" onclick="toggleLedger(this)">' +
+                  '<span class="ledger-num">' + (starts.length + i + 1) + '</span>' +
+                  '<span class="ledger-title">' + g.item.gap + '</span>' +
+                  '<span class="gap-tag sm' + cls + '">' + tag + '</span>' +
+                  '<span class="ledger-toggle">+</span>' +
+                '</button>' +
+                '<div class="ledger-body">' +
+                  '<span class="gap-tag sm' + cls + '">' + tag + '</span>' +
+                  (g.div ? '<p class="gap-item-who" style="margin:0.5rem 0;"><b>' + names[0] + ':</b> ' + lab(g.a) + ' &nbsp;&middot;&nbsp; <b>' + names[1] + ':</b> ' + lab(g.b) + '</p>' : '') +
+                  '<p class="gap-item-why" style="margin-bottom:0.5rem;">' + g.item.why + '</p>' +
+                  '<p class="gap-item-who">Usually sits with: <b>' + g.item.who + '</b></p>' +
+                '</div>' +
+              '</div>';
+          });
+          html += '</div>';
+        }
+
+        if (unsureCount > 0) {
+          html +=
+            '<div class="quiz-aside">' +
+              '<b>On the ' + unsureCount + ' ' + (mode === 'couple' ? 'neither of you was' : 'you weren&rsquo;t') + ' sure about:</b> uncertainty is a finding, not a blank. A plan only one of you can confirm is not yet a plan the family can rely on &mdash; which is exactly the condition this work exists to fix.' +
+            '</div>';
+        }
+
+        html +=
+          '<div class="quiz-aside">' +
+            '<b>You may already have people for some of this.</b> Good &mdash; this isn&rsquo;t a list of professionals to go hire. Most of these items belong with an attorney, CPA, or adviser you already work with. What&rsquo;s missing is usually not expertise. It&rsquo;s somebody making sure the right item reaches the right person, in the right order, and actually gets finished.' +
+          '</div>';
+
+        if (yesCount > 0) {
+          html +=
+            '<div class="quiz-aside">' +
+              '<b>' + (mode === 'couple' ? 'You both answered yes on ' : 'You answered yes on ') + yesCount + ' of ' + totalAsked + '.</b> Those are worth a second look too &mdash; not because you were wrong, but because &ldquo;in place&rdquo; and &ldquo;still accurate&rdquo; are different things, and only one of them protects anybody.' +
+            '</div>';
+        }
+      }
+
+      html +=
+        '<div class="quiz-cta-block">' +
+          '<p class="quiz-cta-head">' + (open === 0 ? 'Worth a second set of eyes.' : 'Let&rsquo;s take the first one together.') + '</p>' +
+          (closingAnswer === 'yes'
+            ? '<p class="quiz-cta-body" style="color:var(--text);"><b style="font-weight:500;">' + (mode === 'couple' ? 'At least one of you said' : 'You said') + ' the coordinating is taking hours and there still isn&rsquo;t a clear view of the strategy.</b> That is the whole reason this work exists. It is real work, it is skilled work, and it does not have to be yours.</p>'
+            : closingAnswer === 'sometimes'
+              ? '<p class="quiz-cta-body" style="color:var(--text);">' + (mode === 'couple' ? 'One of you said' : 'You said') + ' the coordinating sometimes leaves you without a clear view of the strategy. That gap tends to widen quietly as a business grows &mdash; it rarely closes on its own.</p>'
+              : '') +
+          '<p class="quiz-cta-body">' +
+            (open === 0
+              ? 'A short conversation is usually enough to tell whether a well‑built plan is still describing the family it was built for. No cost, no obligation, and both of you are welcome on the call.'
+              : 'This list is the beginning of a conversation, not the end of one. A free discovery call — ideally with both of you — is where we work out what actually matters first, what can wait, and whether I am the right person to close it for you.') +
+          '</p>' +
+          '<div class="quiz-result-actions">' +
+            '<a href="contact.html#contact" class="btn-primary" onclick="sendResults()">Let&rsquo;s Set Up a Conversation &rarr;</a>' +
+            '<button class="btn-ghost" onclick="downloadReport(this)">Download Your Report &darr;</button>' +
+            '<button class="btn-ghost" onclick="restartQuiz()">Start Over</button>' +
+          '</div>' +
+          '<p style="margin-top:1.4rem;font-size:0.78rem;line-height:1.7;color:var(--text-muted);max-width:520px;margin-left:auto;margin-right:auto;">' +
+            'A fillable PDF, grouped by who you&rsquo;d take each item to &mdash; your attorney, your CPA, or nobody but the two of you. Type your notes straight into it, and send it back to me if you want a second opinion on the order.' +
+          '</p>' +
+        '</div>' +
+        '<div class="quiz-disclaimer">' +
+          '<strong style="font-weight:500;">What this is, and what it isn&rsquo;t.</strong> This is an organizational checklist offered for general educational purposes. The ordering above reflects how these projects are typically sequenced &mdash; it is not a legal, tax, or investment recommendation, it does not consider your particular circumstances, and it does not evaluate any document you hold. Its only purpose is to give you a clearer list of questions, in a sensible order, to bring to the appropriate professional.' +
+        '</div>' +
+        '</div>' +
+        buildPrintReport(ordered, gaps, urgent, band, open, totalAsked);
+
+      quizCard.innerHTML = html;
+    }
+
+    /* ---------- the takeaway document ---------- */
+    const PRO_ORDER = [
+      'Nobody but the two of you',
+      'Your estate attorney',
+      'Your business attorney',
+      'Your CPA',
+      'Your financial adviser',
+      'Your insurance professional'
+    ];
+    const PRO_NOTE = {
+      'Nobody but the two of you':
+        'These need no professional and no fee. They are an afternoon or two of writing things down, and they are the fastest way to change your family’s position.',
+      'Your estate attorney':
+        'Worth raising together in a single conversation rather than one at a time.',
+      'Your business attorney':
+        'These concern ownership and what happens to it. Bring your operating agreement.',
+      'Your CPA':
+        'Bring the last two years of business returns.',
+      'Your financial adviser':
+        'These are the numbers everything else gets sized against.',
+      'Your insurance professional':
+        'Ask for the calculation, not just a quote.'
+    };
+
+    function buildPrintReport(ordered, gaps, urgent, band, open, totalAsked) {
+      const today = new Date().toLocaleDateString('en-US',
+        { month: 'long', day: 'numeric', year: 'numeric' });
+
+      let tiles = '';
+      ordered.forEach(o => {
+        const isOpen = o.kind !== 'yes';
+        tiles += '<div class="pr-tile ' + (isOpen ? 'open' : 'filled') + '">' +
+                 (isOpen ? (o.div ? '&ne;' : '?') : '&#10003;') + '</div>';
+      });
+
+      let h =
+        '<div id="printReport">' +
+          '<div class="pr-head">' +
+            '<p class="pr-brand">Molokai Investments</p>' +
+            '<p class="pr-title">Your Family Financial Readiness Report</p>' +
+            '<p class="pr-date">Completed ' + today + '</p>' +
+          '</div>' +
+          '<p class="pr-note">I built this so you would have something useful whether or not we ever speak. Everything below is what you told me is still open, numbered in the order I would work through it, and sorted by who you would take it to.</p>' +
+          '<div class="pr-grid">' + tiles + '</div>' +
+          '<p class="pr-legend">Filled = in place &nbsp;&middot;&nbsp; Dashed = still missing &nbsp;&middot;&nbsp; Shown in the order to work through them</p>' +
+          '<p class="pr-score">' + open + ' of ' + totalAsked + ' pieces still missing &mdash; ' + band.title + '</p>' +
+          '<p class="pr-band">' + band.body + '</p>';
+
+      if (urgent.length) {
+        let bl = urgent.map(u => u.item.gap).join(' &middot; ');
+        h += '<div class="pr-urgent">' +
+               '<p class="pr-urgent-head">' +
+                 (urgent.length === 1 ? 'One item is time-sensitive' : urgent.length + ' items are time-sensitive') +
+               '</p>' +
+               '<p class="pr-urgent-body">' + bl + '</p>' +
+             '</div>';
+      }
+
+      if (!gaps.length) {
+        h += '<div class="pr-clear">You answered yes to every question. The useful question now is not whether these things exist, but when each was last read side by side against the others. Documents that were correct the day they were signed drift quietly as a business grows.</div>';
+      } else {
+        /* number them in the recommended sequence, then group by who they go to */
+        const numbered = gaps.map((g, i) => ({ n: i + 1, g: g }));
+        PRO_ORDER.forEach(pro => {
+          const inPro = numbered.filter(x => x.g.item.pro === pro);
+          if (!inPro.length) return;
+          h += '<div class="pr-section">' +
+                 '<p class="pr-section-head">' + pro + '</p>' +
+                 '<p class="pr-section-note">' + PRO_NOTE[pro] + '</p>';
+          inPro.forEach(x => {
+            h += '<div class="pr-item">' +
+                   '<p class="pr-item-title"><span class="pr-num">' + x.n + '.</span> ' + x.g.item.gap +
+                     (x.g.div ? ' <span class="pr-unsure">(' + names[0] + ': ' + lab(x.g.a).toLowerCase() + ' / ' + names[1] + ': ' + lab(x.g.b).toLowerCase() + ')</span>'
+                              : x.g.kind === 'unsure' ? ' <span class="pr-unsure">(not sure)</span>' : '') +
+                   '</p>' +
+                   '<p class="pr-item-why">' + x.g.item.why + '</p>' +
+                   '<div class="pr-notes"></div>' +
+                 '</div>';
+          });
+          h += '</div>';
+        });
+      }
+
+      if (gaps.length) {
+        const pros = [];
+        gaps.forEach(g => { if (pros.indexOf(g.item.pro) === -1) pros.push(g.item.pro); });
+        const outside = pros.filter(p => p !== 'Nobody but the two of you');
+        h +=
+          '<div class="pr-closing">' +
+            '<p class="pr-closing-head">What this list doesn&rsquo;t do</p>' +
+            '<p class="pr-closing-body">' +
+              'You are now holding ' + gaps.length + ' open items across ' +
+              (outside.length === 1 ? 'one outside professional' : outside.length + ' different professionals') +
+              ', plus the ones only the two of you can close. Each of those people will do their piece well. ' +
+              'None of them will see the others&rsquo; work.' +
+            '</p>' +
+            '<p class="pr-closing-body">' +
+              'And several of these only make sense in relation to each other. The valuation sizes the insurance. ' +
+              'The transition plan waits on the buy&#8209;sell. The estate documents have to agree with the business documents. ' +
+              'Done out of order, you pay for the same work twice.' +
+            '</p>' +
+            '<p class="pr-closing-body"><b>Holding all of that in one picture, in the right order, and keeping it current as things change is a job.</b> ' +
+              'Right now it is yours, on top of everything else. It does not have to be. Your time belongs with your family and your business, not with the filing.' +
+            '</p>' +
+            '<p class="pr-offer">' +
+              'Send this back to me and I will tell you what I would take first and why &mdash; specific to your situation, not this generic ordering. ' +
+              'That conversation is free. Or hand the whole list to me and I will make the calls, schedule the appointments, and see it through. No obligation either way, and no pitch if it isn&rsquo;t a fit.' +
+            '</p>' +
+          '</div>';
+      }
+
+      h +=
+        '<div class="pr-foot">' +
+          '<p class="pr-contact">' +
+            '<b>Matthew Sweeney, CFA</b> &nbsp;&middot;&nbsp; Molokai Investments<br>' +
+            'matthew@molokaiinvestments.com &nbsp;&middot;&nbsp; Wake Forest, NC &nbsp;&middot;&nbsp; Serving the Triangle and Charlotte, the Mississippi Coast, and North Florida' +
+          '</p>' +
+          '<p class="pr-disclaimer">' +
+            'This is an organizational checklist offered for general educational purposes. The ordering reflects how these projects are typically sequenced. It is not legal, tax, or investment advice, it does not consider your particular circumstances, and it does not evaluate any document you hold. Molokai Investments LLC is a registered investment adviser in the State of North Carolina.' +
+          '</p>' +
+        '</div>' +
+        '</div>';
+      return h;
+    }
+
+
+    /* ---------- FILLABLE PDF REPORT ---------- */
+    function plain(t) {
+      return String(t)
+        .replace(/&mdash;/g, '—').replace(/&ndash;/g, '–')
+        .replace(/&rsquo;/g, '’').replace(/&lsquo;/g, '‘')
+        .replace(/&ldquo;/g, '“').replace(/&rdquo;/g, '”')
+        .replace(/&middot;/g, '·').replace(/&amp;/g, '&')
+        .replace(/&#8209;/g, '-').replace(/&nbsp;/g, ' ')
+        .replace(/&#10003;/g, '').replace(/<[^>]+>/g, '')
+        .replace(/‑/g, '-');
+    }
+
+    window.downloadReport = async function (btn) {
+      if (!window.PDFLib) { window.print(); return; }
+      const label = btn ? btn.innerHTML : null;
+      if (btn) { btn.innerHTML = 'Building&hellip;'; btn.disabled = true; }
+
+      try {
+        const { PDFDocument, StandardFonts, rgb, PDFName, PDFBool } = PDFLib;
+        const W = 612, H = 792, M = 54, CW = W - M * 2, FOOT = 48;
+        const BLUE = rgb(0.102, 0.227, 0.431);
+        const INK = rgb(0.102, 0.102, 0.180);
+        const MUTED = rgb(0.353, 0.392, 0.471);
+        const AMBER = rgb(0.604, 0.420, 0.122);
+        const AMBER_BG = rgb(0.992, 0.965, 0.910);
+        const LINE = rgb(0.784, 0.816, 0.867);
+        const SILVER = rgb(0.541, 0.604, 0.710);
+        const FIELD = rgb(0.961, 0.965, 0.973);
+        const WHITE = rgb(1, 1, 1);
+
+        const doc = await PDFDocument.create();
+        const form = doc.getForm();
+        const body = await doc.embedFont(StandardFonts.Helvetica);
+        const bodyB = await doc.embedFont(StandardFonts.HelveticaBold);
+        const bodyI = await doc.embedFont(StandardFonts.HelveticaOblique);
+        const serif = await doc.embedFont(StandardFonts.TimesRoman);
+        const serifI = await doc.embedFont(StandardFonts.TimesRomanItalic);
+
+        let page, y;
+        function newPage() { page = doc.addPage([W, H]); y = H - M; }
+        function room(h) { if (y - h < FOOT) { newPage(); return true; } return false; }
+        function wrap(str, font, size, maxW) {
+          const words = plain(str).split(/\s+/).filter(Boolean);
+          const lines = []; let cur = '';
+          words.forEach(w => {
+            const t = cur ? cur + ' ' + w : w;
+            if (font.widthOfTextAtSize(t, size) > maxW && cur) { lines.push(cur); cur = w; }
+            else cur = t;
+          });
+          if (cur) lines.push(cur);
+          return lines;
+        }
+        function para(str, font, size, color, lead, x, maxW) {
+          const px = x === undefined ? M : x;
+          const mw = maxW === undefined ? CW : maxW;
+          wrap(str, font, size, mw).forEach(l => {
+            room(lead);
+            page.drawText(l, { x: px, y: y - size, size: size, font: font, color: color });
+            y -= lead;
+          });
+        }
+        function rule(color, thickness) {
+          page.drawLine({ start: { x: M, y: y }, end: { x: W - M, y: y },
+            thickness: thickness || 0.75, color: color });
+        }
+
+        /* ---- data ---- */
+        const ordered = combinedRows();
+        const gaps = ordered.filter(r => r.kind !== 'yes');
+        const open = gaps.length;
+        const totalAsked = ordered.length;
+        const band = BANDS.find(b => open <= b.max);
+        const urgent = gaps.filter(g => g.item.urgent);
+        const divRows = gaps.filter(g => g.div);
+
+        newPage();
+
+        /* ---- masthead (page 1 only) ---- */
+        page.drawRectangle({ x: 0, y: H - 96, width: W, height: 96, color: BLUE });
+        page.drawText('MOLOKAI  ·  INVESTMENTS',
+          { x: M, y: 760, size: 7.5, font: bodyB, color: LINE });
+        page.drawText('Your Family Financial Readiness Report', { x: M, y: 726, size: 23, font: serif, color: WHITE });
+        const today = new Date().toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' });
+        page.drawText((mode === 'couple' ? 'Taken together by ' + plain(names[0]) + ' & ' + plain(names[1]) + '  ·  ' : 'Completed ') + today,
+          { x: M, y: 708, size: 8, font: body, color: SILVER });
+        y = 682;
+
+        para('I built this so you would have something useful whether or not we ever speak. Everything below is what you told me is still open, numbered in the order I would work through it, and sorted by who you would take it to. The note fields are yours to type into.',
+          body, 8.5, MUTED, 12);
+        y -= 10;
+
+        /* ---- score row: number | tiles | legend ---- */
+        const rowTop = y;
+        page.drawText(String(open), { x: M, y: rowTop - 30, size: 34, font: serif, color: BLUE });
+        const nw = serif.widthOfTextAtSize(String(open), 34);
+        page.drawText(' of ' + totalAsked, { x: M + nw, y: rowTop - 30, size: 15, font: serif, color: SILVER });
+        page.drawText('PIECES STILL MISSING', { x: M, y: rowTop - 46, size: 7, font: bodyB, color: MUTED });
+        let tx = 200, ty = rowTop - 16, tileRows = 1, col = 0;
+        ordered.forEach(o => {
+          if (col === 8) { col = 0; tx = 200; ty -= 20; tileRows++; }
+          const isOpen = o.kind !== 'yes';
+          page.drawRectangle({ x: tx, y: ty, width: 16, height: 16,
+            color: isOpen ? WHITE : BLUE,
+            borderColor: isOpen ? SILVER : BLUE, borderWidth: o.div ? 1.6 : 1,
+            borderDashArray: (isOpen && !o.div) ? [2, 2] : undefined });
+          tx += 20; col++;
+        });
+        let legY = rowTop - 8;
+        (mode === 'couple' && divRows.length
+          ? ['Filled = both said in place', 'Dashed = still missing', 'Solid outline = answered differently']
+          : ['Filled = in place', 'Outlined = still missing']).forEach(t => {
+          page.drawText(t, { x: 380, y: legY - 8, size: 8, font: body, color: MUTED }); legY -= 11;
+        });
+        wrap('Shown in the order to work through them', body, 8, 178).forEach(l => {
+          page.drawText(l, { x: 380, y: legY - 8, size: 8, font: body, color: MUTED }); legY -= 11;
+        });
+        y = rowTop - Math.max(56, 16 + tileRows * 20) - 12;
+
+        para(band.title + ' ' + band.body, body, 8.5, MUTED, 12);
+        if (mode === 'couple') {
+          para('Taken together: ' + names[0] + ' and ' + names[1] + ' gave the same answer on ' +
+               (totalAsked - divRows.length) + ' of ' + totalAsked +
+               (divRows.length ? ', and answered differently on ' + divRows.length + '.' : '.'),
+            bodyB, 8.5, INK, 12);
+        }
+        y -= 10;
+
+        /* ---- time-sensitive ---- */
+        if (urgent.length) {
+          const head = urgent.length === 1 ? 'ONE ITEM IS TIME-SENSITIVE'
+                                           : urgent.length + ' ITEMS ARE TIME-SENSITIVE';
+          const txt = urgent.map(u => plain(u.item.gap)).join('  ·  ');
+          const lines = wrap(txt, body, 8.5, CW - 28);
+          const bh = 24 + lines.length * 11 + 9;
+          room(bh);
+          page.drawRectangle({ x: M, y: y - bh, width: CW, height: bh, color: AMBER_BG });
+          page.drawRectangle({ x: M, y: y - bh, width: 3, height: bh, color: AMBER });
+          page.drawText(head, { x: M + 14, y: y - 16, size: 7.5, font: bodyB, color: AMBER });
+          let ly = y - 29;
+          lines.forEach(l => { page.drawText(l, { x: M + 14, y: ly, size: 8.5, font: body, color: INK }); ly -= 11; });
+          y -= bh + 16;
+        }
+
+        /* ---- where you answered differently ---- */
+        if (mode === 'couple' && divRows.length) {
+          const intro = 'These are not mistakes — they are the most useful part of your results. A piece only one of you can confirm is not truly in place yet.';
+          const introLines = wrap(intro, bodyI, 8.5, CW - 28);
+          const rowLines = [];
+          divRows.forEach(d => {
+            wrap(plain(d.item.gap) + '  —  ' + names[0] + ': ' + lab(d.a).toLowerCase() +
+                 '  ·  ' + names[1] + ': ' + lab(d.b).toLowerCase(), body, 8.5, CW - 28)
+              .forEach(l => rowLines.push(l));
+          });
+          const bh2 = 26 + introLines.length * 11 + 6 + rowLines.length * 12 + 10;
+          room(bh2);
+          page.drawRectangle({ x: M, y: y - bh2, width: CW, height: bh2,
+            borderColor: BLUE, borderWidth: 1, color: WHITE });
+          page.drawText('WHERE YOU ANSWERED DIFFERENTLY',
+            { x: M + 14, y: y - 17, size: 7.5, font: bodyB, color: BLUE });
+          let dy = y - 30;
+          introLines.forEach(l => { page.drawText(l, { x: M + 14, y: dy, size: 8.5, font: bodyI, color: MUTED }); dy -= 11; });
+          dy -= 5;
+          rowLines.forEach(l => { page.drawText(l, { x: M + 14, y: dy, size: 8.5, font: body, color: INK }); dy -= 12; });
+          y -= bh2 + 16;
+        }
+
+        /* ---- grouped items with fillable notes ---- */
+        let fieldN = 0;
+        if (!gaps.length) {
+          para('You answered yes to every question. The useful question now is not whether these things exist, but when each was last read side by side against the others.',
+            body, 9, INK, 13);
+          y -= 10;
+        } else {
+          const numbered = gaps.map((g, i) => ({ n: i + 1, g: g }));
+          PRO_ORDER.forEach(pro => {
+            const inPro = numbered.filter(x => x.g.item.pro === pro);
+            if (!inPro.length) return;
+            room(64);
+            page.drawText(plain(pro), { x: M, y: y - 13, size: 15, font: serifI, color: BLUE });
+            y -= 21;
+            page.drawLine({ start: { x: M, y: y }, end: { x: M + 36, y: y }, thickness: 1.5, color: BLUE });
+            y -= 12;
+            para(PRO_NOTE[pro], bodyI, 8, MUTED, 11);
+            y -= 8;
+            inPro.forEach(x => {
+              const titleLines = wrap(plain(x.g.item.gap) +
+                (x.g.div ? '  (answered differently)' : x.g.kind === 'unsure' ? '  (not sure)' : ''), bodyB, 10, CW - 24);
+              const whyLines = wrap(x.g.item.why, body, 8.5, CW - 24);
+              room(titleLines.length * 13 + whyLines.length * 11 + 76);
+              page.drawText(x.n + '.', { x: M, y: y - 10, size: 12, font: serif, color: BLUE });
+              titleLines.forEach(l => {
+                page.drawText(l, { x: M + 24, y: y - 10, size: 10, font: bodyB, color: INK }); y -= 13;
+              });
+              whyLines.forEach(l => {
+                page.drawText(l, { x: M + 24, y: y - 8.5, size: 8.5, font: body, color: MUTED }); y -= 11;
+              });
+              y -= 5;
+              page.drawText('N O T E S', { x: M + 24, y: y - 6, size: 6, font: body, color: SILVER });
+              y -= 10;
+              const fld = form.createTextField('note_' + (++fieldN));
+              fld.setText('');
+              fld.enableMultiline();
+              fld.addToPage(page, { x: M + 24, y: y - 40, width: CW - 24, height: 40,
+                borderWidth: 0, backgroundColor: FIELD, textColor: INK });
+              y -= 54;
+            });
+            y -= 8;
+          });
+        }
+
+        /* ---- what this list doesn't do ---- */
+        if (gaps.length) {
+          const pros = [];
+          gaps.forEach(g => { if (pros.indexOf(g.item.pro) === -1) pros.push(g.item.pro); });
+          const outside = pros.filter(p => p !== 'Nobody but the two of you');
+          const p1 = 'You are now holding ' + gaps.length + ' open items across ' +
+            (outside.length === 1 ? 'one outside professional' : outside.length + ' different professionals') +
+            ', plus the ones only the two of you can close. Each of those people will do their piece well. None of them will see the others’ work.';
+          const p2 = 'And several of these only make sense in relation to each other. The valuation sizes the insurance. The transition plan waits on the buy-sell. The estate documents have to agree with the business documents. Done out of order, you pay for the same work twice.';
+          const p3 = 'Holding all of that in one picture, in the right order, and keeping it current as things change is a job. Right now it is yours, on top of everything else. It does not have to be. Your time belongs with your family and your business, not with the filing.';
+          const p4 = 'Send this back to me and I will tell you what I would take first and why — specific to your situation, not this generic ordering. That conversation is free. Or hand the whole list to me and I will make the calls, schedule the appointments, and see it through. No obligation either way, and no pitch if it isn’t a fit.';
+          const all = [p1, p2, p3].map(t => wrap(t, body, 8.5, CW - 24));
+          const off = wrap(p4, body, 9, CW - 24);
+          const bh = 44 + all.reduce((a, l) => a + l.length * 12 + 6, 0) + 12 + off.length * 12 + 14;
+          room(bh);
+          page.drawRectangle({ x: M, y: y - bh, width: CW, height: bh,
+            borderColor: BLUE, borderWidth: 1, color: rgb(1, 1, 1) });
+          let by = y - 22;
+          page.drawText('What this list doesn’t do', { x: M + 12, y: by, size: 15, font: serifI, color: BLUE });
+          by -= 8;
+          page.drawLine({ start: { x: M + 12, y: by }, end: { x: M + 48, y: by }, thickness: 1.5, color: BLUE });
+          by -= 14;
+          all.forEach(lines => {
+            lines.forEach(l => { page.drawText(l, { x: M + 12, y: by, size: 8.5, font: body, color: INK }); by -= 12; });
+            by -= 6;
+          });
+          by -= 2;
+          page.drawLine({ start: { x: M + 12, y: by + 6 }, end: { x: W - M - 12, y: by + 6 },
+            thickness: 0.75, color: LINE });
+          by -= 6;
+          off.forEach(l => { page.drawText(l, { x: M + 12, y: by, size: 9, font: body, color: BLUE }); by -= 12; });
+          y -= bh + 16;
+        }
+
+        /* ---- footer ---- */
+        room(74);
+        rule(LINE); y -= 14;
+        page.drawText('Matthew Sweeney, CFA   ·   Molokai Investments',
+          { x: M, y: y - 9, size: 9, font: bodyB, color: BLUE });
+        y -= 13;
+        page.drawText('matthew@molokaiinvestments.com   ·   Wake Forest, NC   ·   Serving the Triangle and Charlotte, the Mississippi Coast, and North Florida',
+          { x: M, y: y - 8, size: 8, font: body, color: INK });
+        y -= 16;
+        para('This is an organizational checklist offered for general educational purposes. The ordering reflects how these projects are typically sequenced. It is not legal, tax, or investment advice, it does not consider your particular circumstances, and it does not evaluate any document you hold. Molokai Investments LLC is a registered investment adviser in the State of North Carolina.',
+          body, 7, MUTED, 9.5);
+
+        /* ---- page footers ---- */
+        const pages = doc.getPages();
+        pages.forEach((p, i) => {
+          p.drawLine({ start: { x: M, y: 30 }, end: { x: W - M, y: 30 }, thickness: 0.5, color: LINE });
+          p.drawText('MOLOKAI · FAMILY FINANCIAL READINESS REPORT', { x: M, y: 20, size: 6.5, font: body, color: SILVER });
+          const pt = 'PAGE ' + (i + 1) + ' OF ' + pages.length;
+          p.drawText(pt, { x: W - M - body.widthOfTextAtSize(pt, 6.5), y: 20, size: 6.5, font: body, color: SILVER });
+        });
+
+        form.acroForm.dict.set(PDFName.of('NeedAppearances'), PDFBool.True);
+
+        const bytes = await doc.save();
+        const blob = new Blob([bytes], { type: 'application/pdf' });
+        const url = URL.createObjectURL(blob);
+        const a = document.createElement('a');
+        a.href = url;
+        a.download = 'Family-Financial-Readiness-Report.pdf';
+        document.body.appendChild(a); a.click(); document.body.removeChild(a);
+        setTimeout(function () { URL.revokeObjectURL(url); }, 3000);
+      } catch (e) {
+        window.print();
+      } finally {
+        if (btn) { btn.innerHTML = label; btn.disabled = false; }
+      }
+    };
+
+    function buildSummary() {
+      const rows = combinedRows();
+      const gaps = rows.filter(r => r.kind !== 'yes');
+      const totalAsked = rows.length;
+      const lines = gaps.map((g, i) =>
+        (i + 1) + '. ' + g.item.gap +
+        (g.div
+          ? ' [ANSWERED DIFFERENTLY — ' + names[0] + ': ' + lab(g.a).toLowerCase() + ' / ' + names[1] + ': ' + lab(g.b).toLowerCase() + ']'
+          : ' (' + (g.kind === 'unsure' ? 'not sure' : 'not in place') + ')'));
+      let head = 'Family Financial Readiness Report result';
+      if (mode === 'couple') head += ' — taken together by ' + names[0] + ' and ' + names[1];
+      let tail = '';
+      function closeLab(v) {
+        return v === 'yes' ? 'Yes — hours spent coordinating, no clear view of strategy.'
+             : v === 'sometimes' ? 'Sometimes.'
+             : v === 'no' ? 'No — has a clear picture.' : '';
+      }
+      if (mode === 'couple' && (closingP[0] || closingP[1])) {
+        tail = '\n\nCoordination question — ' + names[0] + ': ' + closeLab(closingP[0]) +
+               ' ' + names[1] + ': ' + closeLab(closingP[1]);
+      } else if (closingAnswer) {
+        tail = '\n\nCoordination question: ' + closeLab(closingAnswer);
+      }
+      if (!gaps.length) {
+        return head + ': 0 of ' + totalAsked + ' areas open.' + tail;
+      }
+      return head + ': ' + gaps.length + ' of ' + totalAsked +
+             ' areas open, in suggested order:\n\n' + lines.join('\n') + tail;
+    }
+
+    window.startQuiz = function () { step = nextFrom(0); renderQuestion(); };
+
+    window.answer = function (val) {
+      answers[step] = val;
+      const n = nextFrom(step + 1);
+      if (n < QUESTIONS.length) { step = n; renderQuestion(); }
+      else { step = QUESTIONS.length; renderClosing(); }
+    };
+
+    window.answerClosing = function (val) {
+      closingP[person] = val;
+      if (mode === 'couple' && person === 0) {
+        step = -3;
+        renderHandoff();
+        quizCard.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        return;
+      }
+      if (mode === 'couple') {
+        const rank = { yes: 2, sometimes: 1, no: 0 };
+        closingAnswer = (rank[closingP[0]] >= rank[closingP[1]]) ? closingP[0] : closingP[1];
+      } else {
+        closingAnswer = val;
+      }
+      step = QUESTIONS.length + 1;
+      renderResults();
+      quizCard.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    };
+
+    window.goBack = function () {
+      const from = (step >= QUESTIONS.length) ? QUESTIONS.length - 1 : step - 1;
+      const p = prevFrom(from);
+      if (p >= 0) { step = p; renderQuestion(); }
+    };
+
+    window.restartQuiz = function () {
+      for (let i = 0; i < QUESTIONS.length; i++) { answersP[0][i] = null; answersP[1][i] = null; }
+      closingP[0] = null; closingP[1] = null;
+      closingAnswer = null;
+      mode = 'solo'; person = 0; answers = answersP[0];
+      names[0] = 'Partner 1'; names[1] = 'Partner 2';
+      step = -1;
+      renderIntro();
+      document.getElementById('gapcheck').scrollIntoView({ behavior: 'smooth', block: 'start' });
+    };
+
+    window.sendResults = function () {
+      const summary = buildSummary();
+      try { sessionStorage.setItem('mi-report-summary', summary); } catch (e) {}
+      const hidden = document.getElementById('gapCheckSummary');
+      const box = document.getElementById('message');
+      if (hidden) hidden.value = summary;
+      if (box && box.value.trim() === '') {
+        box.value = summary + '\n\nI would like to talk through this list.';
+      }
+    };
+
+    window.toggleLedger = function (btn) {
+      const row = btn.closest('.ledger-row');
+      row.classList.toggle('open');
+      btn.querySelector('.ledger-toggle').innerHTML = row.classList.contains('open') ? '&minus;' : '+';
+    };
+
+    document.addEventListener('keydown', function (e) {
+      if (step < 0 || step >= QUESTIONS.length) return;
+      if (e.metaKey || e.ctrlKey || e.altKey) return;
+      if (/INPUT|TEXTAREA|SELECT/.test(e.target.tagName)) return;
+      const r = quizCard.getBoundingClientRect();
+      if (r.bottom < 0 || r.top > window.innerHeight) return;
+      const k = e.key.toLowerCase();
+      if (k === 'y') { e.preventDefault(); answer('yes'); }
+      else if (k === 'n') { e.preventDefault(); answer('no'); }
+      else if (k === '?' || k === '/' || k === 'u') { e.preventDefault(); answer('unsure'); }
+    });
+
+    renderIntro();
+
+  </script>
+
+</body>
+</html>

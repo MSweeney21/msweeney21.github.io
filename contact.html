@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Contact | Molokai Investments</title>
+  <meta name="description" content="Begin with a twenty-minute call, or send a note and I will reply within one business day." />
+  <link rel="icon" type="image/png" href="logo.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Jost:wght@300;400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css?v=202611062201" />
+</head>
+<body>
+<header class="nav">
+  <div class="container">
+    <a class="brand" href="index.html"><img src="logo.png" alt="Molokai Investments" /><span>Family business,<br />in that order.</span></a>
+    <button class="menu-toggle" aria-expanded="false" aria-controls="menu">Menu</button>
+    <nav class="menu" id="menu" aria-label="Main"><a href="family-cfo.html">Family CFO</a><a href="strategy.html">Family Value Portfolio</a><a href="report.html">Free report</a><a href="about.html">About</a><a href="contact.html" class="btn btn--primary">Book a call</a></nav>
+  </div>
+</header>
+<script>document.querySelector('.menu-toggle').addEventListener('click',function(){var m=document.getElementById('menu');var o=m.classList.toggle('open');this.setAttribute('aria-expanded',o)});</script>
+<section class="section section--ground" id="contact">
+  <div class="container split" style="align-items:start">
+    <div>
+      <h2>Begin with a <em>twenty-minute call.</em></h2>
+      <p class="lead" style="margin-top:var(--s2)">Let&rsquo;s discuss what&rsquo;s taking away time from your family.</p>
+      <div class="actions"><a class="btn btn--primary" href="https://outlook.office.com/book/MolokaiInvestments@molokaiinvestments.com/?ismsaljsauthenabled" target="_blank" rel="noopener">Pick a time</a><a class="btn btn--secondary" href="tel:+19194954027">(919) 495-4027</a></div>
+    </div>
+    <form class="card form" name="contact" method="POST" action="https://api.web3forms.com/submit">
+      <input type="hidden" name="access_key" value="71ae207a-25a1-47fe-93c3-7a62fabac362" />
+      <input type="hidden" name="subject" value="New inquiry - molokaiinvestments.com" />
+      <input type="hidden" name="redirect" value="https://molokaiinvestments.com/thanks.html" />
+      <input type="checkbox" name="botcheck" style="display:none;" />
+      <input type="hidden" name="gap_check_summary" id="gapCheckSummary" value="" />
+      <p class="small">Or write, and I&rsquo;ll reply within one business day.</p>
+      <div class="row"><div><label for="name">Your names</label><input type="text" id="name" name="name" required /></div><div><label for="email">Email</label><input type="email" id="email" name="email" required /></div></div>
+      <div class="row"><div><label for="phone">Phone (optional)</label><input type="tel" id="phone" name="phone" /></div><div><label for="type">We&rsquo;re</label><select id="type" name="type"><option value="">Choose one</option><option>A couple who owns a business together</option><option>One runs the business, one runs everything else</option><option>Interested in the Family Value Portfolio</option><option>An adviser, CPA, or attorney</option></select></div></div>
+      <div><label for="message">What&rsquo;s keeping you from family time?</label><textarea id="message" name="message"></textarea></div>
+      <div><button type="submit" class="btn btn--primary">Send</button></div>
+    </form>
+  </div>
+</section>
+<script>
+try { var s = sessionStorage.getItem('mi-report-summary');
+  if (s) { var h = document.getElementById('gapCheckSummary'); if (h) h.value = s;
+    var m = document.getElementById('message'); if (m && !m.value.trim()) m.value = s + '\n\nI would like to talk through this list.';
+    sessionStorage.removeItem('mi-report-summary'); } } catch (e) {}
+</script>
+<footer class="footer">
+  <div class="container">
+    <div><img src="logo.png" alt="Molokai Investments" /><p>1009 New Creek Way<br />Wake Forest, NC 27587<br /><a href="tel:+19194954027">(919) 495-4027</a><br /><a href="mailto:matthew@molokaiinvestments.com">matthew@molokaiinvestments.com</a></p></div>
+    <div><h4>Explore</h4><ul><li><a href="family-cfo.html">Family CFO</a></li><li><a href="strategy.html">The Family Value Portfolio</a></li><li><a href="report.html">Your free readiness report</a></li><li><a href="contact.html">Contact</a></li></ul></div>
+    <p class="legal">Molokai Investments LLC is a registered investment adviser in the State of North Carolina. Registration does not imply a certain level of skill or training. Molokai Family &amp; Business Integration is a trade name of Molokai Investments LLC. This website is for informational purposes only and does not constitute investment, legal, or tax advice; your attorney and CPA provide legal and tax advice, and I coordinate with them. The planning-level value estimate is for planning purposes only and is not an appraisal. Investing involves risk, including the possible loss of principal. Complete fee information is in Form ADV Part 2A, provided before any agreement is signed. Prices shown as of November 2026. &copy; 2026 Molokai Investments LLC.</p>
+  </div>
+</footer>
+</body>
+</html>

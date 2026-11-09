@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>If something happened to one of you: the checklist | Molokai</title>
+  <meta name="description" content="Thirteen things a couple who owns a business should have in one place. Free, saves on your device, prints clean." />
+  <link rel="icon" type="image/png" href="logo.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Jost:wght@300;400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css?v=202611042050" />
+</head>
+<body>
+<header class="nav">
+  <div class="container">
+    <a class="brand" href="index.html"><img src="logo.png" alt="Molokai Investments" /><span>Family business,<br />in that order.</span></a>
+    <button class="menu-toggle" aria-expanded="false" aria-controls="menu">Menu</button>
+    <nav class="menu" id="menu" aria-label="Main"><a href="family-cfo.html">Family CFO</a><a href="strategy.html">Family Value Portfolio</a><a href="report.html">Free report</a><a href="index.html#about">About</a><a href="index.html#contact" class="btn btn--primary">Book a call</a></nav>
+  </div>
+</header>
+<script>document.querySelector('.menu-toggle').addEventListener('click',function(){var m=document.getElementById('menu');var o=m.classList.toggle('open');this.setAttribute('aria-expanded',o)});</script>
+<section class="hero">
+  <div class="container split">
+    <div>
+      <p class="kicker">The free checklist</p>
+      <h1>If something happened to one of you, <em>would the other know where to look?</em></h1>
+      <p class="lead">Thirteen things a couple who owns a business should have in one place. Tick what you have. Your answers stay on this device.</p>
+      <div class="actions"><a class="btn btn--primary" href="#list">Start the checklist</a><button class="btn btn--secondary" onclick="window.print()">Print it</button></div>
+      
+    </div>
+    <div class="art"><div class="ring" aria-live="polite"><svg viewBox="0 0 120 120"><circle class="bg" cx="60" cy="60" r="52"/><circle class="fg" id="ring" cx="60" cy="60" r="52" stroke-dasharray="326.7" stroke-dashoffset="326.7"/></svg><div class="num"><span id="count">0</span><small>of 13 in place</small></div></div><p class="art-cap" id="verdict">Most couples have about half.</p></div>
+  </div>
+</section>
+<section class="section section--ground" id="list">
+  <div class="container"><div class="card" style="max-width:56rem"><div class="ck-group"><h3><span class="icon" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="3" y="7" width="18" height="13" rx="2"/><path d="M9 7V5h6v2M3 12h18"/></svg></span>The business</h3><div class="ck-item" data-i="1"><input type="checkbox" id="c1" /><label for="c1"><span>Operating agreement or bylaws, signed, with current ownership</span><small>The first document the attorney and the bank will ask for.</small></label></div><div class="ck-item" data-i="2"><input type="checkbox" id="c2" /><label for="c2"><span>Buy-sell agreement, and the insurance that funds it</span><small>A buy-sell without a policy behind it is a promise nobody can keep.</small></label></div><div class="ck-item" data-i="3"><input type="checkbox" id="c3" /><label for="c3"><span>Who can sign on the business accounts</span><small>If only one name is on file, payroll stops when that person can&rsquo;t.</small></label></div><div class="ck-item" data-i="4"><input type="checkbox" id="c4" /><label for="c4"><span>Payroll, bookkeeping, and tax logins, and who holds them</span><small>Written down, where the other of you can find them.</small></label></div><div class="ck-item" data-i="5"><input type="checkbox" id="c5" /><label for="c5"><span>Who could run the business for 90 days</span><small>Named out loud, not assumed.</small></label></div></div><div class="ck-group"><h3><span class="icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 11l8-7 8 7v9H4z"/><path d="M10 20v-5h4v5"/></svg></span>The family</h3><div class="ck-item" data-i="6"><input type="checkbox" id="c6" /><label for="c6"><span>Wills, powers of attorney, and health-care directives</span><small>Signed within the last five years. Drafts don&rsquo;t count.</small></label></div><div class="ck-item" data-i="7"><input type="checkbox" id="c7" /><label for="c7"><span>Trust documents, and what is actually titled in the trust</span><small>Most trusts are empty; the house never got moved in.</small></label></div><div class="ck-item" data-i="8"><input type="checkbox" id="c8" /><label for="c8"><span>Life and disability policies and their beneficiaries</span><small>Including the group policy through the business.</small></label></div><div class="ck-item" data-i="9"><input type="checkbox" id="c9" /><label for="c9"><span>Retirement-account beneficiaries, checked against the will</span><small>Beneficiary forms override the will.</small></label></div><div class="ck-item" data-i="10"><input type="checkbox" id="c10" /><label for="c10"><span>Real-estate deeds and how each property is titled</span><small>The business building especially.</small></label></div></div><div class="ck-group"><h3><span class="icon" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="9" cy="8" r="3"/><circle cx="17" cy="9" r="2.5"/><path d="M3 20c0-3.3 2.7-6 6-6s6 2.7 6 6"/><path d="M15.5 14.6c2.6.2 4.5 2.4 4.5 5.4"/></svg></span>The people</h3><div class="ck-item" data-i="11"><input type="checkbox" id="c11" /><label for="c11"><span>Every adviser&rsquo;s name, phone, and what they handle</span><small>One page, on the fridge or with your important papers.</small></label></div><div class="ck-item" data-i="12"><input type="checkbox" id="c12" /><label for="c12"><span>One current personal financial statement</span><small>The one the bank asks for every year.</small></label></div><div class="ck-item" data-i="13"><input type="checkbox" id="c13" /><label for="c13"><span>One place where all of this lives, and one person who knows</span><small>This is the whole job.</small></label></div></div></div>
+  <p class="small" style="margin-top:var(--s3)">Educational only; not legal, tax, or investment advice. Your attorney and CPA handle those parts, and I coordinate with them.</p></div>
+</section>
+<section class="section section--tight section--ground">
+  <div class="container">
+    <div class="cta">
+      <div><h2>Found a few gaps?</h2><p>Talk them through in twenty minutes. Getting started closes them in three to four weeks.</p></div>
+      <div class="actions"><a class="btn btn--light" href="https://outlook.office.com/book/MolokaiInvestments@molokaiinvestments.com/?ismsaljsauthenabled" target="_blank" rel="noopener">Pick a time</a><a class="btn btn--ghost-light" href="index.html#contact">Send a note</a></div>
+    </div>
+  </div>
+</section>
+<script>
+(function(){var T=13,K='molokai-checklist',b=document.querySelectorAll('.ck-item input'),r=document.getElementById('ring'),c=document.getElementById('count'),v=document.getElementById('verdict'),C=326.7,s={};
+try{s=JSON.parse(localStorage.getItem(K)||'{}')}catch(e){}
+function u(){var n=0;b.forEach(function(x){x.closest('.ck-item').classList.toggle('done',x.checked);if(x.checked)n++});c.textContent=n;r.style.strokeDashoffset=C-C*n/T;
+v.textContent=n===0?'Most couples have about half.':n<5?'Where most couples start. The operating agreement and beneficiaries come first.':n<10?'About half, which is typical. Getting started gathers the rest.':n<T?'Further along than most. The last few usually need a signature.':'Everything in place. Now: who keeps it that way?'}
+b.forEach(function(x){var i=x.closest('.ck-item').dataset.i;if(s[i])x.checked=true;x.addEventListener('change',function(){s[i]=x.checked;try{localStorage.setItem(K,JSON.stringify(s))}catch(e){}u()})});u()})();
+</script><footer class="footer">
+  <div class="container">
+    <div><img src="logo.png" alt="Molokai Investments" /><p>1009 New Creek Way<br />Wake Forest, NC 27587<br /><a href="tel:+19194954027">(919) 495-4027</a><br /><a href="mailto:matthew@molokaiinvestments.com">matthew@molokaiinvestments.com</a></p></div>
+    <div><h4>Explore</h4><ul><li><a href="family-cfo.html">Family CFO</a></li><li><a href="strategy.html">The Family Value Portfolio</a></li><li><a href="report.html">Your free readiness report</a></li><li><a href="checklist.html">The checklist</a></li><li><a href="index.html#contact">Contact</a></li></ul></div>
+    <p class="legal">Molokai Investments LLC is a registered investment adviser in the State of North Carolina. Registration does not imply a certain level of skill or training. Molokai Family &amp; Business Integration is a trade name of Molokai Investments LLC. This website is for informational purposes only and does not constitute investment, legal, or tax advice; your attorney and CPA provide legal and tax advice, and I coordinate with them. The planning-level value estimate is for planning purposes only and is not an appraisal. Investing involves risk, including the possible loss of principal. Complete fee information is in Form ADV Part 2A, provided before any agreement is signed. Prices shown as of November 2026. &copy; 2026 Molokai Investments LLC.</p>
+  </div>
+</footer>
+</body>
+</html>

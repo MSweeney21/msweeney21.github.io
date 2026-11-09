@@ -2,952 +2,149 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Molokai Investments | Wealth Strategist | Christian Value Investing</title>
-  <meta name="description" content="Holistic business and personal financial integration for family business owners and individuals. Christian value investing. Wake Forest, NC." />
-  <link rel="icon" type="image/png" href="/favicon.png" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Molokai Investments | Family business, in that order | Wake Forest, NC</title>
+  <meta name="description" content="A family office for husband-and-wife business owners: a Family CFO, the Family Value Portfolio, and the tools that go with them." />
+  <link rel="icon" type="image/png" href="logo.png" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet" />
-  <style>
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
-    :root {
-      --blue: #1a3a6e;
-      --blue-deep: #0f2347;
-      --blue-mid: #2a4f8f;
-      --silver: #8a9ab5;
-      --silver-light: #c8d0dd;
-      --gray-bg: #f2f3f5;
-      --gray-mid: #e4e7ec;
-      --white: #ffffff;
-      --text: #1a1a2e;
-      --text-muted: #5a6478;
-      --border: rgba(26,58,110,0.1);
-    }
-
-    html { scroll-behavior: smooth; }
-    body {
-      font-family: 'Jost', sans-serif;
-      font-weight: 300;
-      color: var(--text);
-      background: var(--white);
-      overflow-x: hidden;
-    }
-
-    /* NAV */
-    nav {
-      position: fixed;
-      top: 0; left: 0; right: 0;
-      z-index: 100;
-      padding: 1.2rem 5vw;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      background: rgba(255,255,255,0.97);
-      backdrop-filter: blur(8px);
-      border-bottom: 1px solid var(--border);
-    }
-
-    .nav-brand {
-      display: flex;
-      align-items: center;
-      gap: 0.9rem;
-      text-decoration: none;
-    }
-
-    .nav-mi {
-      display: flex;
-      align-items: center;
-      gap: 0;
-    }
-
-    .nav-mi-text {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 1.6rem;
-      font-weight: 500;
-      color: var(--blue);
-      letter-spacing: 0.05em;
-      line-height: 1;
-    }
-
-    .nav-mi-divider {
-      width: 1px;
-      height: 1.4rem;
-      background: var(--blue);
-      margin: 0 0.18rem;
-      opacity: 0.7;
-    }
-
-    .nav-wordmark {
-      display: flex;
-      flex-direction: column;
-      border-left: 1px solid var(--silver-light);
-      padding-left: 0.9rem;
-    }
-
-    .nav-name {
-      font-family: 'Jost', sans-serif;
-      font-size: 0.7rem;
-      font-weight: 500;
-      letter-spacing: 0.25em;
-      text-transform: uppercase;
-      color: var(--blue);
-    }
-
-    .nav-registered {
-      font-size: 0.58rem;
-      letter-spacing: 0.12em;
-      color: var(--silver);
-      text-transform: uppercase;
-      margin-top: 0.1rem;
-    }
-
-    .nav-cta {
-      font-size: 0.7rem;
-      letter-spacing: 0.18em;
-      text-transform: uppercase;
-      font-weight: 500;
-      color: var(--white);
-      background: var(--blue);
-      text-decoration: none;
-      padding: 0.65rem 1.6rem;
-      transition: background 0.2s;
-    }
-    .nav-cta:hover { background: var(--blue-deep); }
-
-    /* HERO */
-    .hero {
-      min-height: 100vh;
-      display: grid;
-      grid-template-columns: 55% 45%;
-      padding-top: 68px;
-    }
-
-    .hero-left {
-      background: var(--blue);
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      padding: 6rem 5rem 6rem 6vw;
-      position: relative;
-      overflow: hidden;
-    }
-
-    .hero-left::before {
-      content: '';
-      position: absolute;
-      top: -120px; right: -80px;
-      width: 380px; height: 380px;
-      border-radius: 50%;
-      background: rgba(200,208,221,0.06);
-      pointer-events: none;
-    }
-
-    .hero-left::after {
-      content: '';
-      position: absolute;
-      bottom: -100px; left: 40px;
-      width: 260px; height: 260px;
-      border-radius: 50%;
-      background: rgba(200,208,221,0.04);
-      pointer-events: none;
-    }
-
-    .hero-eyebrow {
-      font-size: 0.65rem;
-      letter-spacing: 0.35em;
-      text-transform: uppercase;
-      color: var(--silver-light);
-      margin-bottom: 1.6rem;
-      opacity: 0;
-      animation: fadeUp 0.8s 0.2s forwards;
-    }
-
-    .hero-headline {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: clamp(2.6rem, 3.5vw, 4rem);
-      font-weight: 300;
-      line-height: 1.18;
-      color: var(--white);
-      margin-bottom: 2rem;
-      opacity: 0;
-      animation: fadeUp 0.8s 0.4s forwards;
-    }
-
-    .hero-headline em {
-      font-style: italic;
-      color: var(--silver-light);
-    }
-
-    .hero-divider {
-      width: 48px;
-      height: 1px;
-      background: var(--silver);
-      margin-bottom: 1.8rem;
-      opacity: 0;
-      animation: fadeUp 0.8s 0.55s forwards;
-    }
-
-    .hero-sub {
-      font-size: 0.88rem;
-      line-height: 1.85;
-      color: rgba(255,255,255,0.68);
-      max-width: 440px;
-      margin-bottom: 3rem;
-      opacity: 0;
-      animation: fadeUp 0.8s 0.6s forwards;
-    }
-
-    .hero-cta {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.8rem;
-      background: var(--white);
-      color: var(--blue);
-      text-decoration: none;
-      padding: 1rem 2.2rem;
-      font-size: 0.72rem;
-      letter-spacing: 0.2em;
-      text-transform: uppercase;
-      font-weight: 500;
-      transition: gap 0.2s, background 0.2s;
-      align-self: flex-start;
-      opacity: 0;
-      animation: fadeUp 0.8s 0.8s forwards;
-    }
-    .hero-cta:hover { gap: 1.2rem; background: var(--gray-bg); }
-
-    .hero-right {
-      background: var(--gray-bg);
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      padding: 4rem 3rem;
-      position: relative;
-    }
-
-    .hero-photo-wrap {
-      width: min(320px, 80%);
-      aspect-ratio: 1;
-      border-radius: 50%;
-      overflow: hidden;
-      border: 4px solid var(--white);
-      box-shadow: 0 20px 60px rgba(26,58,110,0.18);
-      margin-bottom: 2.5rem;
-      opacity: 0;
-      animation: fadeIn 1s 0.6s forwards;
-    }
-
-    .hero-photo-wrap img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      object-position: center top;
-    }
-
-    .hero-bio {
-      text-align: center;
-      opacity: 0;
-      animation: fadeUp 0.8s 0.9s forwards;
-    }
-
-    .hero-name {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 1.5rem;
-      font-weight: 500;
-      color: var(--blue);
-      margin-bottom: 0.3rem;
-    }
-
-    .hero-title {
-      font-size: 0.7rem;
-      letter-spacing: 0.2em;
-      text-transform: uppercase;
-      color: var(--silver);
-      margin-bottom: 1rem;
-    }
-
-    .hero-credential {
-      display: inline-block;
-      background: var(--blue);
-      color: var(--white);
-      font-size: 0.65rem;
-      letter-spacing: 0.18em;
-      text-transform: uppercase;
-      padding: 0.35rem 0.9rem;
-      margin-bottom: 1.2rem;
-    }
-
-    .hero-location {
-      font-size: 0.75rem;
-      color: var(--text-muted);
-      letter-spacing: 0.05em;
-    }
-
-    /* WHAT I DO */
-    .what {
-      padding: 7rem 5vw;
-      background: var(--white);
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 6rem;
-      align-items: center;
-      max-width: 1200px;
-      margin: 0 auto;
-    }
-
-    .what-label {
-      font-size: 0.65rem;
-      letter-spacing: 0.35em;
-      text-transform: uppercase;
-      color: var(--silver);
-      margin-bottom: 1.2rem;
-    }
-
-    .what-heading {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: clamp(2rem, 2.8vw, 3rem);
-      font-weight: 400;
-      line-height: 1.25;
-      color: var(--blue);
-      margin-bottom: 1.8rem;
-    }
-
-    .what-body {
-      font-size: 0.9rem;
-      line-height: 1.85;
-      color: var(--text-muted);
-      margin-bottom: 1.4rem;
-    }
-
-    .what-right {
-      display: flex;
-      flex-direction: column;
-      gap: 1.2rem;
-    }
-
-    .what-card {
-      background: var(--gray-bg);
-      padding: 1.8rem 2rem;
-      border-left: 3px solid var(--blue);
-      transition: border-color 0.2s, transform 0.2s;
-    }
-
-    .what-card:hover {
-      border-color: var(--silver);
-      transform: translateX(4px);
-    }
-
-    .what-card-title {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 1.15rem;
-      font-weight: 500;
-      color: var(--blue);
-      margin-bottom: 0.5rem;
-    }
-
-    .what-card-body {
-      font-size: 0.82rem;
-      line-height: 1.7;
-      color: var(--text-muted);
-    }
-
-    /* WHO */
-    .who {
-      background: var(--gray-bg);
-      padding: 7rem 5vw;
-    }
-
-    .who-inner {
-      max-width: 1200px;
-      margin: 0 auto;
-    }
-
-    .section-label {
-      font-size: 0.65rem;
-      letter-spacing: 0.35em;
-      text-transform: uppercase;
-      color: var(--silver);
-      margin-bottom: 1.2rem;
-      text-align: center;
-    }
-
-    .section-heading {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: clamp(2rem, 2.8vw, 2.8rem);
-      font-weight: 400;
-      line-height: 1.25;
-      color: var(--blue);
-      margin-bottom: 1rem;
-      text-align: center;
-    }
-
-    .section-sub {
-      font-size: 0.88rem;
-      line-height: 1.8;
-      color: var(--text-muted);
-      text-align: center;
-      max-width: 600px;
-      margin: 0 auto 4rem;
-    }
-
-    .who-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 2rem;
-    }
-
-    .who-card {
-      background: var(--white);
-      padding: 2.5rem;
-      position: relative;
-      transition: box-shadow 0.2s;
-    }
-
-    .who-card:hover {
-      box-shadow: 0 8px 32px rgba(26,58,110,0.1);
-    }
-
-    .who-num {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 3.5rem;
-      font-weight: 300;
-      color: var(--gray-mid);
-      position: absolute;
-      top: 1.5rem; right: 2rem;
-      line-height: 1;
-    }
-
-    .who-title {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 1.3rem;
-      font-weight: 500;
-      color: var(--blue);
-      margin-bottom: 1rem;
-    }
-
-    .who-body {
-      font-size: 0.83rem;
-      line-height: 1.8;
-      color: var(--text-muted);
-    }
-
-    /* HOW */
-    .how {
-      padding: 7rem 5vw;
-      background: var(--white);
-      max-width: 1200px;
-      margin: 0 auto;
-    }
-
-    .how-steps {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 0;
-      margin-top: 4rem;
-      position: relative;
-    }
-
-    .how-steps::before {
-      content: '';
-      position: absolute;
-      top: 2.5rem;
-      left: calc(100% / 6);
-      right: calc(100% / 6);
-      height: 1px;
-      background: var(--silver-light);
-    }
-
-    .how-step {
-      padding: 0 2rem;
-      text-align: center;
-    }
-
-    .how-step-num {
-      width: 5rem;
-      height: 5rem;
-      border-radius: 50%;
-      background: var(--blue);
-      color: var(--white);
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 1.6rem;
-      font-weight: 400;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      margin: 0 auto 1.8rem;
-      position: relative;
-      z-index: 1;
-    }
-
-    .how-step-title {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 1.15rem;
-      font-weight: 500;
-      color: var(--blue);
-      margin-bottom: 0.7rem;
-    }
-
-    .how-step-body {
-      font-size: 0.8rem;
-      line-height: 1.75;
-      color: var(--text-muted);
-    }
-
-    /* FAITH */
-    .faith {
-      background: var(--blue);
-      padding: 6rem 5vw;
-      text-align: center;
-      position: relative;
-      overflow: hidden;
-    }
-
-    .faith::before {
-      content: '“';
-      position: absolute;
-      top: -2rem; left: 5vw;
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 20rem;
-      color: rgba(255,255,255,0.04);
-      line-height: 1;
-      pointer-events: none;
-    }
-
-    .faith-label {
-      font-size: 0.65rem;
-      letter-spacing: 0.35em;
-      text-transform: uppercase;
-      color: var(--silver-light);
-      margin-bottom: 1.5rem;
-    }
-
-    .faith-quote {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: clamp(1.6rem, 2.5vw, 2.4rem);
-      font-weight: 300;
-      font-style: italic;
-      color: var(--white);
-      max-width: 800px;
-      margin: 0 auto 1.5rem;
-      line-height: 1.5;
-    }
-
-    .faith-body {
-      font-size: 0.88rem;
-      line-height: 1.85;
-      color: rgba(255,255,255,0.65);
-      max-width: 600px;
-      margin: 0 auto;
-    }
-
-    /* CONTACT */
-    .contact {
-      padding: 7rem 5vw;
-      background: var(--gray-bg);
-    }
-
-    .contact-inner {
-      max-width: 680px;
-      margin: 0 auto;
-      text-align: center;
-    }
-
-    .contact-heading {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: clamp(2rem, 3vw, 3rem);
-      font-weight: 400;
-      color: var(--blue);
-      margin-bottom: 1rem;
-    }
-
-    .contact-sub {
-      font-size: 0.88rem;
-      line-height: 1.8;
-      color: var(--text-muted);
-      margin-bottom: 3rem;
-    }
-
-    .contact-form {
-      display: flex;
-      flex-direction: column;
-      gap: 1rem;
-      text-align: left;
-    }
-
-    .form-row {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 1rem;
-    }
-
-    .form-group {
-      display: flex;
-      flex-direction: column;
-      gap: 0.4rem;
-    }
-
-    .form-group label {
-      font-size: 0.68rem;
-      letter-spacing: 0.18em;
-      text-transform: uppercase;
-      color: var(--text-muted);
-    }
-
-    .form-group input,
-    .form-group select,
-    .form-group textarea {
-      padding: 0.85rem 1rem;
-      border: 1px solid var(--gray-mid);
-      background: var(--white);
-      font-family: 'Jost', sans-serif;
-      font-size: 0.85rem;
-      font-weight: 300;
-      color: var(--text);
-      outline: none;
-      transition: border-color 0.2s;
-      -webkit-appearance: none;
-    }
-
-    .form-group select {
-      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%231a3a6e' stroke-width='1.5' fill='none' stroke-linecap='square'/%3E%3C/svg%3E");
-      background-repeat: no-repeat;
-      background-position: right 1rem center;
-      padding-right: 2.5rem;
-      cursor: pointer;
-    }
-
-    .form-group input:focus,
-    .form-group select:focus,
-    .form-group textarea:focus {
-      border-color: var(--blue);
-    }
-
-    .form-group textarea { resize: vertical; min-height: 110px; }
-
-    .form-submit {
-      background: var(--blue);
-      color: var(--white);
-      border: none;
-      padding: 1.1rem 2.5rem;
-      font-family: 'Jost', sans-serif;
-      font-size: 0.72rem;
-      letter-spacing: 0.22em;
-      text-transform: uppercase;
-      font-weight: 500;
-      cursor: pointer;
-      transition: background 0.2s;
-      align-self: center;
-      min-width: 220px;
-    }
-
-    .form-submit:hover { background: var(--blue-deep); }
-
-    .contact-alt {
-      margin-top: 2.5rem;
-      font-size: 0.78rem;
-      color: var(--text-muted);
-    }
-
-    .contact-alt a {
-      color: var(--blue);
-      text-decoration: none;
-      font-weight: 400;
-    }
-
-    .contact-alt a:hover { text-decoration: underline; }
-
-    /* FOOTER */
-    footer {
-      background: var(--blue-deep);
-      padding: 3rem 5vw;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      flex-wrap: wrap;
-      gap: 1.5rem;
-    }
-
-    .footer-brand {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 0.9rem;
-      font-weight: 500;
-      letter-spacing: 0.2em;
-      text-transform: uppercase;
-      color: var(--white);
-    }
-
-    .footer-legal {
-      font-size: 0.7rem;
-      color: rgba(255,255,255,0.45);
-      line-height: 1.7;
-      max-width: 500px;
-      text-align: right;
-    }
-
-    /* ANIMATIONS */
-    @keyframes fadeUp {
-      from { opacity: 0; transform: translateY(20px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-
-    @keyframes fadeIn {
-      from { opacity: 0; }
-      to { opacity: 1; }
-    }
-
-    .reveal {
-      opacity: 0;
-      transform: translateY(24px);
-      transition: opacity 0.7s, transform 0.7s;
-    }
-    .reveal.visible {
-      opacity: 1;
-      transform: translateY(0);
-    }
-
-    /* RESPONSIVE */
-    @media (max-width: 768px) {
-      nav { padding: 1rem 5vw; }
-      .nav-wordmark { display: none; }
-      .hero { grid-template-columns: 1fr; }
-      .hero-left { padding: 4rem 5vw 3rem; min-height: 60vh; }
-      .hero-right { padding: 3rem 5vw 4rem; }
-      .what { grid-template-columns: 1fr; gap: 3rem; padding: 4rem 5vw; }
-      .who-grid { grid-template-columns: 1fr; }
-      .how-steps { grid-template-columns: 1fr; gap: 3rem; }
-      .how-steps::before { display: none; }
-      .form-row { grid-template-columns: 1fr; }
-      footer { flex-direction: column; text-align: center; }
-      .footer-legal { text-align: center; }
-    }
-  </style>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Jost:wght@300;400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css?v=202611062201" />
 </head>
 <body>
-
-  <!-- NAV -->
-  <nav>
-    <a href="#" style="text-decoration:none; display:flex; flex-direction:column; align-items:center; gap:0.3rem;">
-      <img src="/logo.png" alt="Molokai Investments" style="height:64px; width:auto;"/>
-      <span style="font-family:'Jost',sans-serif; font-size:0.62rem; font-weight:500; letter-spacing:0.28em; text-transform:uppercase; color:#1a3a6e; white-space:nowrap;">Molokai Investments</span>
-    </a>
-    <a href="#contact" class="nav-cta">Start a Conversation</a>
-  </nav>
-
-  <!-- HERO -->
-  <section class="hero">
-    <div class="hero-left">
-      <p class="hero-eyebrow">Family Wealth Strategist &middot; Wake Forest, NC</p>
-      <h1 class="hero-headline">
-        Your financial life &mdash;<br>
-        <em>finally unified.</em>
-      </h1>
-      <div class="hero-divider"></div>
-      <p class="hero-sub">
-        Business finances, personal wealth, and investments coordinated under one integrated strategy &mdash; guided by a CFA charterholder and grounded in Christian values.
-      </p>
-      <a href="#contact" class="hero-cta">
-        Book a Discovery Call
-        <span class="hero-cta-arrow">&rarr;</span>
-      </a>
+<header class="nav">
+  <div class="container">
+    <a class="brand" href="index.html"><img src="logo.png" alt="Molokai Investments" /><span>Family business,<br />in that order.</span></a>
+    <button class="menu-toggle" aria-expanded="false" aria-controls="menu">Menu</button>
+    <nav class="menu" id="menu" aria-label="Main"><a href="family-cfo.html">Family CFO</a><a href="strategy.html">Family Value Portfolio</a><a href="report.html">Free report</a><a href="about.html">About</a><a href="contact.html" class="btn btn--primary">Book a call</a></nav>
+  </div>
+</header>
+<script>document.querySelector('.menu-toggle').addEventListener('click',function(){var m=document.getElementById('menu');var o=m.classList.toggle('open');this.setAttribute('aria-expanded',o)});</script>
+<section class="hero">
+  <div class="container split">
+    <div>
+      <p class="kicker">Family business, in that order.</p>
+      <h1>Everything you&rsquo;ve built together, <em>finally organized.</em></h1>
+      <p class="lead">A Family CFO for husband-and-wife business owners. I guide the overall strategy, manage the documents, coordinate your advisers, and keep every deadline on my calendar, so your evenings stay family-focused.</p>
+      <div class="actions"><a class="btn btn--primary" href="family-cfo.html">How it works</a><a class="btn btn--secondary" href="report.html">Get your free family report</a></div>
+      <div class="trust"><span>CFA charterholder</span><span>NC-registered investment adviser</span><span>Wake Forest, North Carolina</span></div>
     </div>
-    <div class="hero-right">
-      <div class="hero-photo-wrap">
-        <img src="/headshot.jpg" alt="Matthew Sweeney, CFA" />
-      </div>
-      <div class="hero-bio">
-        <p class="hero-name">Matthew Sweeney</p>
-        <p class="hero-title">Family Wealth Strategist &middot; Molokai Investments</p>
-        <span class="hero-credential">CFA Charterholder</span>
-        <p class="hero-location">&#x1F4CD; Wake Forest, North Carolina</p>
-      </div>
+    <div class="art"><div class="orbit orbit--settle" role="img" aria-label="The two of&nbsp;you at the center, surrounded by Your children, Your documents, Your advisers, Your plan, Your property, Your business.">
+  <div class="center">The two of&nbsp;you<small>with more time to focus on your family</small></div><span class="o o1"><i></i>Your children</span><span class="o o2"><i></i>Your documents</span><span class="o o3"><i></i>Your advisers</span><span class="o o4"><i></i>Your plan</span><span class="o o5"><i></i>Your property</span><span class="o o6"><i></i>Your business</span>
+</div><p class="art-cap">I keep it all in order, so you can focus on each other and your family.</p></div><script>
+(function(){
+  var o=document.querySelector('.orbit--settle'); if(!o) return;
+  if(window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  var pills=[].slice.call(o.querySelectorAll('.o'));
+  var fin=[-90,-30,30,90,150,210], R=38;
+  var seed=11; function rnd(){seed=(seed*9301+49297)%233280;return seed/233280}
+  var SCAT=5200, LAND=2600, T=SCAT+LAND, t0=null;
+  /* each item surfaces two or three times, at a random spot, for a moment */
+  var flashes=pills.map(function(){
+    var list=[], at=rnd()*600;
+    while(at<SCAT-700){
+      var dur=700+rnd()*900, ang=rnd()*6.283, rad=29+rnd()*20, dir=rnd()*6.283, dist=10+rnd()*14;
+      list.push({s:at,d:dur,x:50+rad*Math.cos(ang),y:50+rad*Math.sin(ang),dx:dist*Math.cos(dir),dy:dist*Math.sin(dir)});
+      at+=dur+150+rnd()*900;
+    }
+    return list;
+  });
+  function cl(x){return Math.max(0,Math.min(1,x))}
+  function sm(x){x=cl(x);return x*x*(3-2*x)}
+  function place(t){
+    var fog=1-sm((t-SCAT+400)/(LAND));
+    o.style.setProperty('--fog',fog.toFixed(3));
+    pills.forEach(function(el,i){
+      var x=fin[i], op=0, blur=6, sc=.9, X, Y;
+      var rest={x:50+R*Math.cos(fin[i]*Math.PI/180), y:50+R*Math.sin(fin[i]*Math.PI/180)};
+      if(t<SCAT){
+        var f=null; flashes[i].forEach(function(F){ if(t>=F.s && t<=F.s+F.d) f=F; });
+        if(!f){ el.style.opacity=0; return; }
+        var u=(t-f.s)/f.d;
+        var m=u<.5 ? 1-Math.pow(1-u*2,3) : 1+Math.pow((u-.5)*2,3);   /* zips in, lingers, zips off */
+        X=f.x+f.dx*(m/2-.5); Y=f.y+f.dy*(m/2-.5);
+        var focus=Math.sin(Math.PI*u); focus=Math.pow(focus,3);      /* sharp only for an instant */
+        op=.25+.75*Math.sin(Math.PI*u); blur=5*(1-focus)+.2; sc=.86+.14*focus;
+      } else {
+        var k=sm((t-SCAT-i*140)/1500);                                /* each settles into place */
+        X=rest.x+(1-k)*6*Math.cos(fin[i]*Math.PI/180); Y=rest.y+(1-k)*6*Math.sin(fin[i]*Math.PI/180);
+        op=k; blur=6*(1-k); sc=.9+.1*k;
+      }
+      el.style.left=X+'%'; el.style.top=Y+'%';
+      el.style.opacity=op.toFixed(3);
+      el.style.transform='translate(-50%,-50%) scale('+sc.toFixed(3)+')';
+      el.style.filter=blur>.15?'blur('+blur.toFixed(2)+'px)':'none';
+    });
+  }
+  function step(ts){ if(t0===null) t0=ts; var t=ts-t0; place(t); if(t<T) requestAnimationFrame(step); else { o.style.removeProperty('--fog'); pills.forEach(function(el){el.style.cssText='';}); } }
+  place(0);
+  var go=function(){requestAnimationFrame(step)};
+  if('IntersectionObserver' in window){ var io=new IntersectionObserver(function(e){ if(e[0].isIntersecting){io.disconnect(); setTimeout(go,150);} },{threshold:.4}); io.observe(o);} else go();
+})();
+</script>
+  </div>
+</section>
+<section class="section section--ground">
+  <div class="container">
+    <div class="head"><h2>The job <em>you didn&rsquo;t choose.</em></h2><p class="lead">One of you spends important business hours or late nights piecing the family&rsquo;s plan together, or the other takes it on as an unwanted job&mdash;away from the kids and grandkids. Either way, it takes time meant for each other or your family.</p></div>
+    <div class="card">
+  <div class="week" role="img" aria-label="An illustrative week of evenings. Before: most evenings are spent on the family's finances and paperwork. After: almost all evenings are family time.">
+    <div class="hide-sm"></div><div class="d">Mon</div><div class="d">Tue</div><div class="d">Wed</div><div class="d">Thu</div><div class="d">Fri</div><div class="d">Sat</div><div class="d">Sun</div><div class="hide-sm"></div>
+    <div class="row-label">Today<small>evenings, 7&ndash;11 p.m.</small></div><div class="cell"><div class="f" style="height:25%"></div><div class="w" style="height:75%"></div></div><div class="cell"><div class="f" style="height:40%"></div><div class="w" style="height:60%"></div></div><div class="cell"><div class="f" style="height:20%"></div><div class="w" style="height:80%"></div></div><div class="cell"><div class="f" style="height:45%"></div><div class="w" style="height:55%"></div></div><div class="cell"><div class="f" style="height:30%"></div><div class="w" style="height:70%"></div></div><div class="cell"><div class="f" style="height:65%"></div><div class="w" style="height:35%"></div></div><div class="cell"><div class="f" style="height:75%"></div><div class="w" style="height:25%"></div></div><div class="total">Most evenings<small>overtaken by this &ldquo;job&rdquo;</small></div>
+    <div class="row-label">With a Family CFO<small>same evenings</small></div><div class="cell"><div class="f" style="height:95%"></div><div class="w" style="height:5%"></div></div><div class="cell"><div class="f" style="height:100%"></div><div class="w" style="height:0%"></div></div><div class="cell"><div class="f" style="height:90%"></div><div class="w" style="height:10%"></div></div><div class="cell"><div class="f" style="height:100%"></div><div class="w" style="height:0%"></div></div><div class="cell"><div class="f" style="height:95%"></div><div class="w" style="height:5%"></div></div><div class="cell"><div class="f" style="height:100%"></div><div class="w" style="height:0%"></div></div><div class="cell"><div class="f" style="height:100%"></div><div class="w" style="height:0%"></div></div><div class="total good">Yours<small>back with the family</small></div>
+  </div>
+  <div class="legend"><span><i style="background:var(--navy)"></i>The unwanted job</span><span><i style="background:var(--warm)"></i>Family time</span><span class="note">* An illustrative week, not a measurement.</span></div>
+</div>
+    <div class="grid grid-3" style="margin-top:var(--s3)"><div class="card"><span class="icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M7 3h7l4 4v14H7z"/><path d="M14 3v4h4"/><path d="M10 12h5M10 16h5"/></svg></span><h3>Documents in a dozen places</h3><p>The operating agreement, the deeds, the policies, the statements. Finding them all takes hours you don&rsquo;t have.</p></div><div class="card"><span class="icon" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="9" cy="8" r="3"/><circle cx="17" cy="9" r="2.5"/><path d="M3 20c0-3.3 2.7-6 6-6s6 2.7 6 6"/><path d="M15.5 14.6c2.6.2 4.5 2.4 4.5 5.4"/></svg></span><h3>Advisers who aren&rsquo;t always on the same page</h3><p>The CPA, the estate attorney, the financial adviser, and the banker each play a role. You&rsquo;re left piecing the strategy together.</p></div><div class="card"><span class="icon" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.5"/><path d="M12 7.5V12l3 2"/></svg></span><h3>Deadlines that sneak up on you</h3><p>Renewals, filings, the bank&rsquo;s statement request. Each one takes time from your kids, your spouse, or your business.</p></div></div>
+  </div>
+</section>
+<section class="section">
+  <div class="container">
+    <div class="head"><h2>The family at the center. <em>Everything else built to support it.</em></h2><p class="lead">Everything a business-owning family needs, under one roof. Each service stands on its own.</p></div>
+    <div class="grid grid-2">
+      <a class="card card--navy" href="family-cfo.html"><span class="icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 11l8-7 8 7v9H4z"/><path d="M10 20v-5h4v5"/></svg></span><h3>Family CFO</h3><p>The unwanted job, removed from your plate: documents, advisers, deadlines, and planning, coordinated for you.</p><span class="more">From $1,000 a month</span></a>
+      <a class="card" href="strategy.html"><span class="icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 20V11M10 20V5M16 20v-6M2 20h20"/></svg></span><h3>The Family Value Portfolio</h3><p>A Christian investment approach, built specifically for value investors. Values inform what can be owned; value decides what is.</p><span class="more">How it works</span></a>
     </div>
-  </section>
-
-  <!-- WHAT I DO -->
-  <section class="what">
-    <div class="what-left reveal">
-      <p class="what-label">What I Do</p>
-      <h2 class="what-heading">One strategy.<br>Every dimension.</h2>
-      <p class="what-body">
-        It is common for our financial lives to become fragmented over time &mdash; a collection of siloed accounts and disconnected advisors that require constant, manual coordination. I bring that picture into focus. My role is to connect the various dimensions of your financial life &mdash; integrating business strategy and cash flow with personal long-term wealth.
-      </p>
-      <p class="what-body">
-        I ensure every asset is working toward a unified objective, synchronizing your entire team of professionals with your family&rsquo;s vision.
-      </p>
+  </div>
+</section>
+<section class="section section--ground" id="how">
+  <div class="container">
+    <div class="head"><h2>Getting started. <em>Three simple steps.</em></h2><p class="lead">Both of you in the room, nothing to prepare.</p></div>
+    <div class="steps">
+      <div class="step"><h3>A twenty-minute call</h3><p>No cost. A chance for me to get to know you, and for us to decide whether we&rsquo;re the right fit.</p><span class="meta">Free</span></div>
+      <div class="step"><h3>The Family Financial Blueprint</h3><p>We gather every document, build the whole picture, and score the business&rsquo;s transition readiness.</p><span class="meta">$3,500 &middot; three to four weeks</span></div>
+      <div class="step"><h3>Family CFO, continued partnership</h3><p>I keep everything current, coordinate the advisers, track deadlines, and proactively advise on strategy.</p><span class="meta">From $1,000 a month</span></div>
     </div>
-    <div class="what-right reveal">
-      <div class="what-card">
-        <p class="what-card-title">Business Financial Management</p>
-        <p class="what-card-body">Monthly reporting, cash flow oversight, bookkeeper coordination, business valuation estimates, and transition readiness &mdash; delivered monthly, before decisions get made without the right information.</p>
-      </div>
-      <div class="what-card">
-        <p class="what-card-title">Personal Wealth Integration</p>
-        <p class="what-card-body">Investment management, tax planning coordination, estate gap identification, and a complete Family Financial Blueprint &mdash; everything organized in one place.</p>
-      </div>
-      <div class="what-card">
-        <p class="what-card-title">Total Advisor Coordination</p>
-        <p class="what-card-body">I work alongside your existing CPA, attorney, and financial advisor &mdash; filling gaps, coordinating communication, and ensuring your entire team is aligned.</p>
-      </div>
+  </div>
+</section>
+<section class="section" id="about">
+  <div class="container about">
+    <img class="portrait" src="matthew.png" alt="Matthew Sweeney, CFA" />
+    <div>
+      <p class="kicker">My mission</p>
+      <h2>Matthew Sweeney, CFA</h2>
+      <p class="lead" style="margin-top:var(--s2)">I&rsquo;ve built Molokai Investments to help families focus on what matters most: faith and family. Having worked with family business owners, and now being one myself, I&rsquo;ve seen how hard it is to balance faith, family, business, and the personal financial picture. My work brings your family&rsquo;s values into every part of your financial life, whether that&rsquo;s estate planning, legacy building, running the business, or investing itself.</p>
+      <p class="lead" style="margin-top:var(--s2)">As a Family CFO, I work with a small number of families at a time. I don&rsquo;t keep the books, draft documents, or replace your current advisers. I read your financials, coordinate the people who do those things, and make sure you have one cohesive strategy across your family, your business, and your life.</p>
+      <p class="lead" style="margin-top:var(--s2)">My Family Value Portfolio is available to families who want their investments to reflect their values, as long as it fits their goals and circumstances.</p>
+      <ul class="facts"><li>CFA charterholder</li><li>Mathematics and finance, Stetson University</li><li>NC-registered investment adviser</li><li>Wake Forest, North Carolina</li></ul>
+      <p style="margin-top:var(--s3)"><a class="more" href="about.html">More about Matthew <span aria-hidden="true">&rsaquo;</span></a></p>
     </div>
-  </section>
-
-  <!-- WHO I SERVE -->
-  <section class="who">
-    <div class="who-inner">
-      <p class="section-label reveal">Who I Serve</p>
-      <h2 class="section-heading reveal">Built for two kinds of partners.</h2>
-      <p class="section-sub reveal">Whether you own a business or simply want your personal finances managed with purpose, Molokai Investments was built for partners like you &mdash; and every situation is treated as unique.</p>
-      <div class="who-grid">
-        <div class="who-card reveal">
-          <span class="who-num">01</span>
-          <p class="who-title">Family Business Owners</p>
-          <p class="who-body">
-            Families and individuals who own privately-held businesses generating $1&ndash;15M in annual revenue. You&rsquo;ve built something valuable, but your financial life is managed in fragments with no one coordinating the full picture. I bring it all together &mdash; business and personal &mdash; under one integrated strategy, treating you as a true partner in that process.
-          </p>
-        </div>
-        <div class="who-card reveal">
-          <span class="who-num">02</span>
-          <p class="who-title">Individual Investors</p>
-          <p class="who-body">
-            Individuals and families who want their complete financial picture &mdash; all assets, whether I manage them or not &mdash; factored into a holistic investment strategy grounded in Christian values. You receive the same integrated approach: a coordinated picture of everything you own, working toward a unified objective.
-          </p>
-        </div>
-      </div>
+  </div>
+</section>
+<section class="section section--tight">
+  <div class="container">
+    <div class="cta">
+      <div><h2>Begin with a twenty-minute call.</h2><p>Let&rsquo;s discuss what&rsquo;s taking away time from your family.</p></div>
+      <div class="actions"><a class="btn btn--light" href="https://outlook.office.com/book/MolokaiInvestments@molokaiinvestments.com/?ismsaljsauthenabled" target="_blank" rel="noopener">Pick a time</a><a class="btn btn--ghost-light" href="contact.html">Send a note</a></div>
     </div>
-  </section>
-
-  <!-- HOW IT WORKS -->
-  <section style="padding: 7rem 5vw; background: var(--white);">
-    <div style="max-width: 1200px; margin: 0 auto;">
-      <p class="section-label reveal">How It Works</p>
-      <h2 class="section-heading reveal">Three steps to a fully integrated financial life.</h2>
-      <p class="section-sub reveal">Every engagement begins the same way &mdash; with a genuine conversation.</p>
-      <div class="how-steps">
-        <div class="how-step reveal">
-          <div class="how-step-num">1</div>
-          <p class="how-step-title">Discovery Call</p>
-          <p class="how-step-body">A free, conversational call to understand your situation and determine whether we&rsquo;re the right fit for each other.</p>
-        </div>
-        <div class="how-step reveal">
-          <div class="how-step-num">2</div>
-          <p class="how-step-title">Assessment</p>
-          <p class="how-step-body">A 30-day deep dive into your complete financial picture &mdash; business and personal. You receive a written report, a Family Financial Blueprint, and a prioritized action plan.</p>
-        </div>
-        <div class="how-step reveal">
-          <div class="how-step-num">3</div>
-          <p class="how-step-title">Ongoing Partnership</p>
-          <p class="how-step-body">Monthly reporting, advisor coordination, portfolio management, and a quarterly updated picture of where everything stands &mdash; delivered consistently and in time for the decisions that matter.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- FAITH SECTION -->
-  <section class="faith">
-    <p class="faith-label reveal">Christian Value Investing</p>
-    <p class="faith-quote reveal">&ldquo;Even the decision to invest in one place rather than another, in one productive sector rather than another, is always a moral and cultural choice.&rdquo;</p>
-        <p style="font-size:0.72rem; letter-spacing:0.1em; color:rgba(255,255,255,0.5); max-width:600px; margin:0 auto 1.8rem; font-style:italic; text-align:center;">&mdash; Pope St. John Paul II, Centesimus Annus (1991)</p>
-        <p class="faith-body reveal">
-      All portfolio management at Molokai Investments is guided by Christian values and stewardship principles &mdash; a foundational conviction, not a niche offering. This means investing with a long-term, fundamentals-driven philosophy that aligns financial growth with what you truly believe.
-    </p>
-  </section>
-
-  <!-- BOOKING -->
-  <section style="padding: 5rem 5vw; background: var(--white);">
-    <div style="max-width: 860px; margin: 0 auto;">
-      <p class="section-label reveal" style="text-align:center;">Schedule a Call</p>
-      <h2 class="section-heading reveal" style="text-align:center;">Book a discovery call.</h2>
-      <p class="section-sub reveal" style="text-align:center; max-width:520px; margin: 0 auto 2.5rem;">
-        Choose a time that works for you. The first conversation is free, conversational, and has no agenda beyond determining whether we are the right fit for each other.
-      </p>
-      <div class="reveal" style="text-align: center;">
-        <a href="https://outlook.office.com/book/MolokaiInvestments@molokaiinvestments.com/?ismsaljsauthenabled"
-           target="_blank" rel="noopener noreferrer"
-           style="display: inline-flex; align-items: center; gap: 0.8rem; background: var(--blue); color: var(--white); text-decoration: none; padding: 1.1rem 2.8rem; font-family: 'Jost', sans-serif; font-size: 0.8rem; letter-spacing: 0.2em; text-transform: uppercase; font-weight: 500; transition: background 0.2s;">
-          Schedule a Discovery Call &rarr;
-        </a>
-        <p style="margin-top: 1.2rem; font-size: 0.78rem; color: var(--text-muted);">Opens in a new tab &mdash; no account required.</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- CONTACT -->
-  <section class="contact" id="contact">
-    <div class="contact-inner">
-      <p class="section-label reveal">Get in Touch</p>
-      <h2 class="contact-heading reveal">Let&rsquo;s talk.</h2>
-      <p class="contact-sub reveal">
-        Prefer to reach out directly? Send a message below and I will be in touch within one business day.
-      </p>
-      <form class="contact-form reveal" name="contact" method="POST" action="https://api.web3forms.com/submit">
-        <input type="hidden" name="access_key" value="71ae207a-25a1-47fe-93c3-7a62fabac362" />
-        <input type="hidden" name="subject" value="New Inquiry - Molokai Investments Website" />
-        <input type="hidden" name="redirect" value="https://molokaiinvestments.com/thanks.html" />
-        <input type="checkbox" name="botcheck" style="display:none;" />
-        <div class="form-row">
-          <div class="form-group">
-            <label for="name">Full Name</label>
-            <input type="text" id="name" name="name" placeholder="Your Name" required />
-          </div>
-          <div class="form-group">
-            <label for="email">Email Address</label>
-            <input type="email" id="email" name="email" placeholder="your@email.com" required />
-          </div>
-        </div>
-        <div class="form-row">
-          <div class="form-group">
-            <label for="phone">Phone (optional)</label>
-            <input type="tel" id="phone" name="phone" placeholder="Your phone number" />
-          </div>
-          <div class="form-group">
-            <label for="type">I am a&hellip;</label>
-            <select id="type" name="type">
-              <option value="">Select one</option>
-              <option value="business-owner">Family Business Owner</option>
-              <option value="individual">Individual Investor</option>
-              <option value="other">Other</option>
-            </select>
-          </div>
-        </div>
-        <div class="form-group">
-          <label for="message">What brings you here?</label>
-          <textarea id="message" name="message" placeholder="Tell me a little about your situation and what you&rsquo;re looking for&hellip;"></textarea>
-        </div>
-        <button type="submit" class="form-submit">Send Message &rarr;</button>
-      </form>
-
-    </div>
-  </section>
-
-  <!-- FOOTER -->
-  <footer>
-    <span class="footer-brand">Molokai Investments</span>
-    <p class="footer-legal">
-      Molokai Investments LLC is a registered investment adviser in the State of North Carolina. Registration does not imply a certain level of skill or training. This website is for informational purposes only and does not constitute investment advice. &copy; 2026 Molokai Investments LLC. All rights reserved.
-    </p>
-  </footer>
-
-  <script>
-    // Scroll reveal
-    const reveals = document.querySelectorAll('.reveal');
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach((entry, i) => {
-        if (entry.isIntersecting) {
-          setTimeout(() => entry.target.classList.add('visible'), i * 80);
-          observer.unobserve(entry.target);
-        }
-      });
-    }, { threshold: 0.1 });
-    reveals.forEach(el => observer.observe(el));
-
-    // Form handler
-    // Once you add your Formspree ID above, remove the e.preventDefault() line
-    // so the form submits normally to Formspree
-    // Form handled natively by Netlify
-  </script>
-
+  </div>
+</section>
+<footer class="footer">
+  <div class="container">
+    <div><img src="logo.png" alt="Molokai Investments" /><p>1009 New Creek Way<br />Wake Forest, NC 27587<br /><a href="tel:+19194954027">(919) 495-4027</a><br /><a href="mailto:matthew@molokaiinvestments.com">matthew@molokaiinvestments.com</a></p></div>
+    <div><h4>Explore</h4><ul><li><a href="family-cfo.html">Family CFO</a></li><li><a href="strategy.html">The Family Value Portfolio</a></li><li><a href="report.html">Your free readiness report</a></li><li><a href="contact.html">Contact</a></li></ul></div>
+    <p class="legal">Molokai Investments LLC is a registered investment adviser in the State of North Carolina. Registration does not imply a certain level of skill or training. Molokai Family &amp; Business Integration is a trade name of Molokai Investments LLC. This website is for informational purposes only and does not constitute investment, legal, or tax advice; your attorney and CPA provide legal and tax advice, and I coordinate with them. The planning-level value estimate is for planning purposes only and is not an appraisal. Investing involves risk, including the possible loss of principal. Complete fee information is in Form ADV Part 2A, provided before any agreement is signed. Prices shown as of November 2026. &copy; 2026 Molokai Investments LLC.</p>
+  </div>
+</footer>
 </body>
 </html>
